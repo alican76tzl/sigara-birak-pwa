@@ -125,39 +125,48 @@
                 return;
             }
 
+            // Get form inputs
+            const quitDateInput = document.querySelector('input[type="datetime-local"]');
+            const cigarettesInput = document.querySelector('input[value="15"]');
+            const priceInput = document.querySelector('input[value="42"]');
+
             // Load profile data
             try {
                 const profile = await window.SupabaseConfig.profile.get(user.id);
                 const quitInfo = await window.SupabaseConfig.quitInfo.get(user.id);
 
                 if (profile) {
-                    document.querySelector('input[value="Ahmet"]').value = profile.full_name?.split(' ')[0] || '';
-                    document.querySelector('input[value="Yılmaz"]').value = profile.full_name?.split(' ')[1] || '';
+                    const names = profile.full_name?.split(' ') || ['', ''];
+                    document.querySelector('input[value="Ahmet"]').value = names[0] || '';
+                    document.querySelector('input[value="Yılmaz"]').value = names[1] || '';
                     document.querySelector('input[value="ahmet@email.com"]').value = user.email;
                 }
 
                 if (quitInfo) {
-                    // Update form with quit info
-                    const inputs = document.querySelectorAll('.form-input');
-                    inputs.forEach(input => {
-                        if (input.type === 'number' && input.value === '15') {
-                            input.value = quitInfo.cigarettes_per_day;
-                        }
-                        if (input.type === 'number' && input.value === '42') {
-                            input.value = quitInfo.price_per_pack;
-                        }
-                    });
+                    // Load quit date
+                    if (quitInfo.quit_date) {
+                        const quitDate = new Date(quitInfo.quit_date);
+                        // Format to datetime-local format: YYYY-MM-DDTHH:MM
+                        const formatted = quitDate.toISOString().slice(0, 16);
+                        quitDateInput.value = formatted;
+                    }
+
+                    // Load smoking info
+                    if (cigarettesInput) cigarettesInput.value = quitInfo.cigarettes_per_day || 15;
+                    if (priceInput) priceInput.value = quitInfo.price_per_pack || 42;
                 }
             } catch (e) {
-                console.log('Profil bilgileri yüklenemedi');
+                console.log('Profil bilgileri yüklenemedi:', e);
             }
 
-            // Handle form submission
-            document.querySelector('.profile-form').addEventListener('submit', async (e) => {
+            // Handle personal info form submission
+            const personalForm = document.querySelectorAll('.profile-form')[0];
+            personalForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
-                const formData = new FormData(e.target);
-                const fullName = `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim();
+                const firstName = document.querySelector('input[value="Ahmet"]').value;
+                const lastName = document.querySelector('input[value="Yılmaz"]').value;
+                const fullName = `${firstName} ${lastName}`.trim();
 
                 try {
                     await window.SupabaseConfig.profile.update(user.id, {
@@ -165,10 +174,43 @@
                         updated_at: new Date().toISOString()
                     });
 
-                    const saveBtn = document.querySelector('.save-btn');
+                    const saveBtn = e.target.querySelector('.save-btn');
                     saveBtn.textContent = '✓ Kaydedildi';
                     setTimeout(() => saveBtn.textContent = 'Değişiklikleri Kaydet', 2000);
                 } catch (err) {
+                    alert('Kaydetme hatası: ' + err.message);
+                }
+            });
+
+            // Handle quit info form submission
+            const quitForm = document.querySelectorAll('.profile-form')[1];
+            quitForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const quitDate = quitDateInput.value;
+                const cigarettesPerDay = parseInt(cigarettesInput.value) || 15;
+                const pricePerPack = parseFloat(priceInput.value) || 42;
+
+                if (!quitDate) {
+                    alert('Lütfen bırakma tarihini seçin!');
+                    return;
+                }
+
+                try {
+                    // Save to Supabase
+                    await window.SupabaseConfig.quitInfo.save(user.id, {
+                        quit_date: new Date(quitDate).toISOString(),
+                        cigarettes_per_day: cigarettesPerDay,
+                        price_per_pack: pricePerPack
+                    });
+
+                    const saveBtn = e.target.querySelector('.save-btn');
+                    saveBtn.textContent = '✓ Güncellendi';
+                    setTimeout(() => saveBtn.textContent = 'Güncelle', 2000);
+
+                    console.log('✅ Quit info kaydedildi:', { quitDate, cigarettesPerDay, pricePerPack });
+                } catch (err) {
+                    console.error('❌ Kaydetme hatası:', err);
                     alert('Kaydetme hatası: ' + err.message);
                 }
             });
