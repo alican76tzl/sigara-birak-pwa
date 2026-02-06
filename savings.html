@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasarruf Hesaplayıcı | Sigara Bırak</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-wrapper">
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="home.html" class="sidebar-logo"><div class="sidebar-logo-icon">✓</div><span>Sigara Bırak</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Ana Menü</div>
+                    <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a>
+                    <a href="progress.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg><span>İlerlemem</span></a>
+                    <a href="savings.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Tasarruf</span></a>
+                    <a href="community.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><span>Topluluk</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile"><div class="user-avatar">AY</div><div class="user-info"><div class="user-name">Ahmet Yılmaz</div><div class="user-status">45 gün sigarasız</div></div></div>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-title"><h1>💰 Tasarruf Hesaplayıcı</h1><p class="header-subtitle">Sigaraya harcadığınız parayı görün, başka neler yapabileceğinizi keşfedin</p></div>
+            </header>
+
+            <div class="dashboard-grid grid-cols-2">
+                <div class="dashboard-card">
+                    <div class="card-header"><h3 class="card-title">📊 Özet</h3></div>
+                    <div class="card-content">
+                        <div class="big-savings">₺1.890</div>
+                        <div class="savings-label">45 Günde Biriktirdiğiniz Para</div>
+                        <div class="savings-breakdown-horizontal">
+                            <div class="sb-item"><div class="sb-value">₺42</div><div class="sb-label">Günlük</div></div>
+                            <div class="sb-item"><div class="sb-value">₺294</div><div class="sb-label">Haftalık</div></div>
+                            <div class="sb-item"><div class="sb-value">₺1.260</div><div class="sb-label">Aylık</div></div>
+                            <div class="sb-item"><div class="sb-value">₺15.330</div><div class="sb-label">Yıllık</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header"><h3 class="card-title">🎯 Bu Parayla Neler Yapılabilir?</h3></div>
+                    <div class="card-content">
+                        <div class="possibilities-list">
+                            <div class="poss-item"><div class="poss-icon">✈️</div><div class="poss-content"><h4>Yurt Dışı Tatili</h4><p>₺15.330 ile 2 kişilik 5 günlük tatil</p></div></div>
+                            <div class="poss-item"><div class="poss-icon">📱</div><div class="poss-content"><h4>iPhone 15</h4><p>1 yılda biriktirdiğiniz parayla</p></div></div>
+                            <div class="poss-item"><div class="poss-icon">🚗</div><div class="poss-content"><h4>Araba Peşinatı</h4><p>3 yılda ₺46.000 birikim</p></div></div>
+                            <div class="poss-item"><div class="poss-icon">🏠</div><div class="poss-content"><h4>Ev Tadilatı</h4><p>Mutfak ve banyo yenileme</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header"><h3 class="card-title">📈 Gelecek Projeksiyonu</h3></div>
+                <div class="card-content">
+                    <div class="projection-grid">
+                        <div class="proj-card"><div class="proj-time">3 Ay</div><div class="proj-amount">₺3.780</div><div class="proj-desc">Yeni laptop</div></div>
+                        <div class="proj-card"><div class="proj-time">6 Ay</div><div class="proj-amount">₺7.560</div><div class="proj-desc">Avrupa turu</div></div>
+                        <div class="proj-card highlight"><div class="proj-time">1 Yıl</div><div class="proj-amount">₺15.330</div><div class="proj-desc">Araba peşinatı</div></div>
+                        <div class="proj-card"><div class="proj-time">2 Yıl</div><div class="proj-amount">₺30.660</div><div class="proj-desc">Düğün masrafları</div></div>
+                        <div class="proj-card"><div class="proj-time">5 Yıl</div><div class="proj-amount">₺76.650</div><div class="proj-desc">Ev peşinatı</div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <style>
+        .big-savings { font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; margin-bottom: 0.5rem; }
+        .savings-label { text-align: center; color: #64748b; margin-bottom: 2rem; }
+        .savings-breakdown-horizontal { display: flex; justify-content: space-around; gap: 1rem; }
+        .sb-item { text-align: center; padding: 1rem; background: #f8fafc; border-radius: 12px; flex: 1; }
+        .sb-value { font-size: 1.5rem; font-weight: 700; color: #1e293b; }
+        .sb-label { font-size: 0.8rem; color: #64748b; }
+        .possibilities-list { display: flex; flex-direction: column; gap: 1rem; }
+        .poss-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; }
+        .poss-icon { font-size: 2rem; }
+        .poss-content h4 { font-weight: 600; color: #1e293b; margin-bottom: 0.25rem; }
+        .poss-content p { font-size: 0.85rem; color: #64748b; }
+        .projection-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+        .proj-card { text-align: center; padding: 1.5rem 1rem; background: #f8fafc; border-radius: 12px; }
+        .proj-card.highlight { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .proj-time { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; opacity: 0.8; }
+        .proj-amount { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .proj-desc { font-size: 0.8rem; opacity: 0.9; }
+        @media (max-width: 768px) { .projection-grid { grid-template-columns: repeat(2, 1fr); } .big-savings { font-size: 2.5rem; } }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            window.SupabaseConfig.init();
+            
+            const user = await window.SupabaseConfig.checkAuth();
+            if (!user) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Load quit info and calculate savings
+            try {
+                const quitInfo = await window.SupabaseConfig.quitInfo.get(user.id);
+                if (quitInfo) {
+                    const days = Math.floor((new Date() - new Date(quitInfo.quit_date)) / (1000 * 60 * 60 * 24));
+                    const cigarettesPerDay = quitInfo.cigarettes_per_day || 15;
+                    const pricePerPack = quitInfo.price_per_pack || 42;
+                    const cigarettesPerPack = quitInfo.cigarettes_per_pack || 20;
+                    
+                    const dailyCost = (cigarettesPerDay / cigarettesPerPack) * pricePerPack;
+                    const totalSaved = Math.floor(dailyCost * days);
+                    const yearlySaved = Math.floor(dailyCost * 365);
+                    
+                    // Update savings display
+                    document.querySelector('.big-savings').textContent = '₺' + totalSaved.toLocaleString();
+                    document.querySelector('.savings-label').textContent = days + ' Günde Biriktirdiğiniz Para';
+                    
+                    // Update breakdown
+                    const sbItems = document.querySelectorAll('.sb-value');
+                    if (sbItems.length >= 4) {
+                        sbItems[0].textContent = '₺' + Math.floor(dailyCost).toLocaleString();
+                        sbItems[1].textContent = '₺' + Math.floor(dailyCost * 7).toLocaleString();
+                        sbItems[2].textContent = '₺' + Math.floor(dailyCost * 30).toLocaleString();
+                        sbItems[3].textContent = '₺' + yearlySaved.toLocaleString();
+                    }
+                }
+            } catch (e) {
+                console.log('Savings data could not be loaded');
+            }
+        });
+    </script>
+</body>
+</html>

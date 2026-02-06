@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar | Sigara Bırak</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-wrapper">
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="home.html" class="sidebar-logo"><div class="sidebar-logo-icon">✓</div><span>Sigara Bırak</span></a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section"><div class="nav-section-title">Hesap</div>
+                    <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a>
+                    <a href="profile.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profilim</span></a>
+                    <a href="settings.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Ayarlar</span></a>
+                </div>
+            </nav>
+            <div class="sidebar-footer"><div class="user-profile"><div class="user-avatar">AY</div><div class="user-info"><div class="user-name">Ahmet Yılmaz</div><div class="user-status">45 gün sigarasız</div></div></div></div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-title"><h1>⚙️ Ayarlar</h1><p class="header-subtitle">Uygulama tercihlerinizi özelleştirin</p></div>
+            </header>
+
+            <div class="dashboard-grid grid-cols-2">
+                <div class="dashboard-card">
+                    <div class="card-header"><h3 class="card-title">🔔 Bildirimler</h3></div>
+                    <div class="card-content">
+                        <div class="settings-list">
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">Günlük Hatırlatmalar</div><div class="setting-desc">Her gün motivasyon mesajı al</div></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">Kilometre Taşı Bildirimleri</div><div class="setting-desc">Önemli günlerde bildirim al</div></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">Topluluk Yanıtları</div><div class="setting-desc">Yorum ve beğeni bildirimleri</div></div><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">E-posta Bülteni</div><div class="setting-desc">Haftalık ilerleme raporu</div></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header"><h3 class="card-title">🎨 Görünüm</h3></div>
+                    <div class="card-content">
+                        <div class="settings-list">
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">Karanlık Mod</div><div class="setting-desc">Koyu tema kullan</div></div><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">Kompakt Mod</div><div class="setting-desc">Daha fazla içerik gör</div></div><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+                            <div class="form-group" style="margin-top: 1rem;"><label>Dil</label><select class="form-input"><option selected>Türkçe</option><option>English</option></select></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header"><h3 class="card-title">🔒 Güvenlik</h3></div>
+                    <div class="card-content">
+                        <div class="settings-list">
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">İki Faktörlü Doğrulama</div><div class="setting-desc">SMS ile ek güvenlik</div></div><label class="switch"><input type="checkbox"><span class="slider"></span></label></div>
+                            <div class="setting-item"><div class="setting-info"><div class="setting-name">Biyometrik Giriş</div><div class="setting-desc">Parmak izi / yüz tanıma</div></div><label class="switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                            <button class="save-btn" style="margin-top: 1rem; width: 100%;">Şifre Değiştir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card danger-zone">
+                    <div class="card-header"><h3 class="card-title">⚠️ Hesap İşlemleri</h3></div>
+                    <div class="card-content">
+                        <p style="color: #64748b; margin-bottom: 1rem; font-size: 0.9rem;">Oturumunuzu kapatın veya hesabınızı yönetin.</p>
+                        <button class="danger-btn" id="logoutBtn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">🚪 Çıkış Yap</button>
+                        <hr style="margin: 1rem 0; border: none; border-top: 1px solid #e2e8f0;">
+                        <p style="color: #64748b; margin-bottom: 1rem; font-size: 0.9rem;">Bu işlemler geri alınamaz.</p>
+                        <button class="danger-btn" id="exportDataBtn">💾 Tüm Verileri İndir (JSON)</button>
+                        <button class="danger-btn delete" id="deleteAccountBtn">🗑️ Hesabı Sil</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            window.SupabaseConfig.init();
+            
+            const user = await window.SupabaseConfig.checkAuth();
+            if (!user) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Load user settings
+            try {
+                const settings = await window.SupabaseConfig.settings.get(user.id);
+                if (settings) {
+                    // Update toggle switches
+                    document.querySelectorAll('.switch input').forEach((toggle, index) => {
+                        if (index === 0) toggle.checked = settings.daily_reminder;
+                        if (index === 1) toggle.checked = settings.milestone_notifications;
+                        if (index === 2) toggle.checked = settings.push_notifications;
+                        if (index === 3) toggle.checked = settings.email_notifications;
+                        if (index === 4) toggle.checked = settings.dark_mode;
+                        if (index === 5) toggle.checked = settings.compact_mode;
+                    });
+                }
+            } catch (e) {
+                console.log('Ayarlar yüklenemedi');
+            }
+            
+            // Save settings on toggle change
+            document.querySelectorAll('.switch input').forEach(toggle => {
+                toggle.addEventListener('change', async () => {
+                    const toggles = document.querySelectorAll('.switch input');
+                    try {
+                        await window.SupabaseConfig.settings.update(user.id, {
+                            daily_reminder: toggles[0]?.checked ?? true,
+                            milestone_notifications: toggles[1]?.checked ?? true,
+                            push_notifications: toggles[2]?.checked ?? false,
+                            email_notifications: toggles[3]?.checked ?? true,
+                            dark_mode: toggles[4]?.checked ?? false,
+                            compact_mode: toggles[5]?.checked ?? false
+                        });
+                    } catch (e) {
+                        console.log('Ayarlar kaydedilemedi');
+                    }
+                });
+            });
+            
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', async () => {
+                if (confirm('Çıkış yapmak istediğinize emin misiniz?')) {
+                    try {
+                        await window.SupabaseConfig.auth.signOut();
+                        window.location.href = 'index.html';
+                    } catch (e) {
+                        alert('Çıkış yapılırken hata oluştu');
+                    }
+                }
+            });
+            
+            // Export data button
+            document.getElementById('exportDataBtn').addEventListener('click', async () => {
+                try {
+                    const profile = await window.SupabaseConfig.profile.get(user.id);
+                    const quitInfo = await window.SupabaseConfig.quitInfo.get(user.id);
+                    const checkins = await window.SupabaseConfig.checkIns.getHistory(user.id, 365);
+                    const mood = await window.SupabaseConfig.mood.getHistory(user.id, 365);
+                    const journal = await window.SupabaseConfig.journal.getEntries(user.id, 100);
+                    const achievements = await window.SupabaseConfig.achievements.get(user.id);
+                    
+                    const data = {
+                        profile,
+                        quitInfo,
+                        checkins,
+                        mood,
+                        journal,
+                        achievements,
+                        exported_at: new Date().toISOString()
+                    };
+                    
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `sigara-birak-verilerim-${new Date().toISOString().split('T')[0]}.json`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                } catch (e) {
+                    alert('Veriler dışa aktarılırken hata oluştu');
+                }
+            });
+            
+            // Delete account button
+            document.getElementById('deleteAccountBtn').addEventListener('click', async () => {
+                if (confirm('HESABINIZI SİLMEK İSTEDİĞİNİZE EMİN MİSİNİZ? Bu işlem geri alınamaz ve tüm verileriniz silinecektir!')) {
+                    alert('Hesap silme özelliği şu an kullanılamıyor. Lütfen destek ekibiyle iletişime geçin.');
+                }
+            });
+        });
+    </script>
+    
+    <style>
+        .settings-list { display: flex; flex-direction: column; gap: 1.25rem; }
+        .setting-item { display: flex; justify-content: space-between; align-items: center; }
+        .setting-info { flex: 1; }
+        .setting-name { font-weight: 500; color: #1e293b; margin-bottom: 0.25rem; }
+        .setting-desc { font-size: 0.8rem; color: #64748b; }
+        .switch { position: relative; width: 48px; height: 26px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; inset: 0; background: #e2e8f0; border-radius: 26px; transition: 0.3s; }
+        .slider::before { content: ''; position: absolute; height: 20px; width: 20px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: 0.3s; }
+        input:checked + .slider { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        input:checked + .slider::before { transform: translateX(22px); }
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-group label { font-size: 0.875rem; font-weight: 500; color: #64748b; }
+        .form-input { padding: 0.75rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-size: 0.9rem; }
+        .save-btn { padding: 0.875rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+        .danger-zone .card-content { border: 1px solid #fee2e2; border-radius: 12px; padding: 1.5rem; }
+        .danger-btn { width: 100%; padding: 0.75rem; margin-bottom: 0.75rem; background: white; border: 1px solid #e2e8f0; border-radius: 8px; color: #64748b; cursor: pointer; font-weight: 500; }
+        .danger-btn.delete { color: #ef4444; border-color: #fecaca; }
+        .danger-btn:hover { background: #f8fafc; }
+        @media (max-width: 768px) { .dashboard-grid.grid-cols-2 { grid-template-columns: 1fr; } }
+    </style>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <title>Sigara Bırak | Sağlıklı Bir Yaşama Adım Atın</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="landing-page">
+    <!-- Navigation -->
+    <nav class="nav-landing">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <div class="nav-logo-icon">✓</div>
+                <span>Sigara Bırak</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Özellikler</a>
+                <a href="#pricing">Fiyatlandırma</a>
+                <a href="#testimonials">Yorumlar</a>
+                <a href="index.html#login" class="nav-btn-secondary">Giriş Yap</a>
+                <a href="index.html#register" class="nav-btn-primary">Üye Ol</a>
+            </div>
+            <button class="nav-mobile-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-shapes">
+                <div class="hero-shape shape-a"></div>
+                <div class="hero-shape shape-b"></div>
+                <div class="hero-shape shape-c"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">🎉</span>
+                <span>50.000+ kişi sigarayı bıraktı!</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Bugün Sigarayı Bırak,</span>
+                <span class="title-line highlight">Yarın Sağlığını Kazan!</span>
+            </h1>
+            <p class="hero-subtitle">
+                Bilimsel yöntemler, uzman desteği ve topluluk gücüyle 
+                sigarayı bırakma yolculuğunuzda yanınızdayız.
+            </p>
+            <div class="hero-cta">
+                <a href="index.html#register" class="hero-btn-primary">
+                    <span>Ücretsiz Başla</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#features" class="hero-btn-secondary">
+                    <span>Nasıl Çalışır?</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="94">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Başarı Oranı</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-suffix">K+</div>
+                    <div class="stat-label">Mutlu Üye</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-suffix">K+</div>
+                    <div class="stat-label">Tasarruf (₺)</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-mouse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Neden Biz?</span>
+                <h2 class="section-title">Sigara Bırakma Yolculuğunuzda Yanınızdayız</h2>
+                <p class="section-subtitle">Profesyonel araçlar ve destekle sigarayı bırakmak hiç bu kadar kolay olmamıştı.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon gradient-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>İlerleme Takibi</h3>
+                    <p>Vücudunuzdaki iyileşmeyi gerçek zamanlı takip edin. Sağlık kazanımlarınızı görün.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Topluluk Desteği</h3>
+                    <p>Aynı yolda olan binlerce kişiyle deneyim paylaşımı ve motivasyon.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-3">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Zamanlayıcı & Hatırlatıcı</h3>
+                    <p>Son sigaranızdan itibaren süreyi takip edin ve kilometre taşlarını kutlayın.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-4">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Tasarruf Hesaplayıcı</h3>
+                    <p>Sigaraya harcadığınız parayı görün ve neler yapabileceğinizi keşfedin.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-5">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Uzman Danışmanlık</h3>
+                    <p>7/24 destek hattı ve profesyonel sigara bırakma uzmanlarına erişim.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-6">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Başarı Ödülleri</h3>
+                    <p>Kilometre taşlarını tamamlayın, rozetler kazanın ve başarınızı kutlayın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Timeline Section -->
+    <section class="health-timeline">
+        <div class="section-container">
+            <div class="section-header light">
+                <span class="section-tag">Vücudunuz Değişiyor</span>
+                <h2 class="section-title">Sigarayı Bıraktıktan Sonra Neler Oluyor?</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">20 dk</div>
+                    <div class="timeline-content">
+                        <h4>Kalp Atışı Normale Dönüyor</h4>
+                        <p>Kalp atış hızınız ve kan basıncınız sigara içmeye başladığınız seviyeye iniyor.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">12 saat</div>
+                    <div class="timeline-content">
+                        <h4>Kan Oksijenleniyor</h4>
+                        <p>Karbonmonoksit seviyeleri normale dönüyor ve oksijen taşıma kapasitesi artıyor.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2-12 hafta</div>
+                    <div class="timeline-content">
+                        <h4>Dolaşım İyileşiyor</h4>
+                        <p>Kan dolaşımı ve akciğer fonksiyonları önemli ölçüde iyileşiyor.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1-9 ay</div>
+                    <div class="timeline-content">
+                        <h4>Öksürük Azalıyor</h4>
+                        <p>Öksürük ve nefes daralması azalıyor. Akciğerlerde temizleyici işlemler aktif.</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <div class="timeline-time">1 yıl</div>
+                    <div class="timeline-content">
+                        <h4>Kalp Hastalığı Riski Yarı Yarıya</h4>
+                        <p>Koroner kalp hastalığı riski sigara içen birine göre %50 azalıyor!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Abonelikler</span>
+                <h2 class="section-title">Size Uygun Planı Seçin</h2>
+                <p class="section-subtitle">İlk 7 gün ücretsiz. Dilediğiniz zaman iptal edin.</p>
+            </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label active" data-plan="monthly">Aylık</span>
+                <div class="toggle-switch">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-label" data-plan="yearly">Yıllık</span>
+                <span class="save-badge">%20 İndirim</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₺</span>
+                            <span class="amount" data-monthly="0" data-yearly="0">0</span>
+                            <span class="period">/ay</span>
+                        </div>
+                        <p class="pricing-desc">Başlangıç için ideal</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>İlerleme takibi</li>
+                        <li><span class="check">✓</span>Temel topluluk erişimi</li>
+                        <li><span class="check">✓</span>Tasarruf hesaplayıcı</li>
+                        <li class="disabled"><span>×</span>Uzman danışmanlık</li>
+                        <li class="disabled"><span>×</span>Reklamsız deneyim</li>
+                    </ul>
+                    <a href="index.html#register" class="pricing-btn outline">Ücretsiz Başla</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">En Popüler</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₺</span>
+                            <span class="amount" data-monthly="99" data-yearly="79">99</span>
+                            <span class="period">/ay</span>
+                        </div>
+                        <p class="pricing-desc">Tam destek paketi</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>Tüm Starter özellikleri</li>
+                        <li><span class="check">✓</span>7/24 uzman desteği</li>
+                        <li><span class="check">✓</span>Reklamsız deneyim</li>
+                        <li><span class="check">✓</span>Gelişmiş raporlar</li>
+                        <li><span class="check">✓</span>Aile paylaşımı</li>
+                    </ul>
+                    <a href="index.html#register" class="pricing-btn primary">Premium Ol</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₺</span>
+                            <span class="amount" data-monthly="149" data-yearly="119">149</span>
+                            <span class="period">/ay</span>
+                        </div>
+                        <p class="pricing-desc">Maksimum destek</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>Tüm Premium özellikleri</li>
+                        <li><span class="check">✓</span>Kişisel koç atanması</li>
+                        <li><span class="check">✓</span>Özel sağlık raporu</li>
+                        <li><span class="check">✓</span>Öncelikli destek</li>
+                        <li><span class="check">✓</span>API erişimi</li>
+                    </ul>
+                    <a href="index.html#register" class="pricing-btn outline">Pro Ol</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Başarı Hikayeleri</span>
+                <h2 class="section-title">Onlar Başardı, Siz de Başarabilirsiniz!</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"15 yıllık sigara bağımlılığımdan kurtuldum. Bu uygulama sayesinde her gün motivasyonumu korudum ve 1 yıldır temizim!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AY</div>
+                        <div class="author-info">
+                            <div class="author-name">Ahmet Y.</div>
+                            <div class="author-badge">365 Gün Sigarasız</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Tasarruf hesaplayıcı beni çok etkiledi. Yılda 15.000₺ para biriktirdiğimi görünce bırakmam gerektiğini anladım."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <div class="author-name">Selin K.</div>
+                            <div class="author-badge">180 Gün Sigarasız</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Topluluk desteği muhteşem! Zor anlarımda her zaman yanımda hissettim. Artık daha sağlıklı ve mutluyum."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ME</div>
+                        <div class="author-info">
+                            <div class="author-name">Mehmet E.</div>
+                            <div class="author-badge">90 Gün Sigarasız</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Hemen Bugün Başlayın!</h2>
+                <p>İlk 7 gün ücretsiz. Kredi kartı gerekmez. Şimdi adım atın, sağlıklı yarınlar sizi bekliyor!</p>
+                <a href="index.html#register" class="cta-btn">
+                    <span>Ücretsiz Deneyin</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="home.html" class="footer-logo">
+                        <div class="footer-logo-icon">✓</div>
+                        <span>Sigara Bırak</span>
+                    </a>
+                    <p>Sağlıklı bir yaşam için ilk adımı birlikte atıyoruz. 50.000+ kişiye sigarayı bırakma yolculuklarında eşlik ettik.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">t</a>
+                        <a href="#" aria-label="Instagram">i</a>
+                        <a href="#" aria-label="YouTube">y</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Ürün</h4>
+                        <ul>
+                            <li><a href="#features">Özellikler</a></li>
+                            <li><a href="#pricing">Fiyatlandırma</a></li>
+                            <li><a href="#">İndir</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Şirket</h4>
+                        <ul>
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Kariyer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Destek</h4>
+                        <ul>
+                            <li><a href="#">Yardım Merkezi</a></li>
+                            <li><a href="#">İletişim</a></li>
+                            <li><a href="#">Gizlilik</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sigara Bırak. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase for Landing Page -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/landing.js"></script>
+</body>
+</html>

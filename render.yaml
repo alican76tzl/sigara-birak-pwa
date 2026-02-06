@@ -1,0 +1,44 @@
+# Render Static Site Configuration
+# Sigara Bırak PWA Deployment
+
+services:
+  - type: web
+    name: sigara-birak-pwa
+    env: static
+    buildCommand: echo "Build complete"
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /dashboard
+        destination: /dashboard.html
+      - type: rewrite
+        source: /profile
+        destination: /profile.html
+      - type: rewrite
+        source: /community
+        destination: /community.html
+      - type: rewrite
+        source: /settings
+        destination: /settings.html
+      - type: rewrite
+        source: /progress
+        destination: /progress.html
+      - type: rewrite
+        source: /savings
+        destination: /savings.html
+      - type: rewrite
+        source: /home
+        destination: /home.html
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
+      - path: /manifest.json
+        name: Cache-Control
+        value: no-cache
