@@ -391,6 +391,13 @@
         }
 
         async function showNewPost() {
+            // Check if user is logged in
+            if (!currentUser) {
+                alert('Lütfen önce giriş yapın!');
+                window.location.href = 'login.html';
+                return;
+            }
+
             const content = prompt('Gönderinizi yazın:');
             if (content && content.trim()) {
                 try {
