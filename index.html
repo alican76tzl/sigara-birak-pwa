@@ -14,7 +14,7 @@
     <!-- Navigation -->
     <nav class="nav-landing">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="home.html" class="nav-logo">
                 <div class="nav-logo-icon">✓</div>
                 <span>Sigara Bırak</span>
             </a>
@@ -22,8 +22,8 @@
                 <a href="#features">Özellikler</a>
                 <a href="#pricing">Fiyatlandırma</a>
                 <a href="#testimonials">Yorumlar</a>
-                <a href="#login" class="nav-btn-secondary">Giriş Yap</a>
-                <a href="#register" class="nav-btn-primary">Üye Ol</a>
+                <a href="login.html#login" class="nav-btn-secondary">Giriş Yap</a>
+                <a href="login.html#register" class="nav-btn-primary">Üye Ol</a>
             </div>
             <button class="nav-mobile-toggle" id="navToggle">
                 <span></span>
@@ -57,7 +57,7 @@
                 sigarayı bırakma yolculuğunuzda yanınızdayız.
             </p>
             <div class="hero-cta">
-                <a href="#register" class="hero-btn-primary">
+                <a href="login.html#register" class="hero-btn-primary">
                     <span>Ücretsiz Başla</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -243,7 +243,7 @@
                         <li class="disabled"><span>×</span>Uzman danışmanlık</li>
                         <li class="disabled"><span>×</span>Reklamsız deneyim</li>
                     </ul>
-                    <a href="#register" class="pricing-btn outline">Ücretsiz Başla</a>
+                    <a href="login.html#register" class="pricing-btn outline">Ücretsiz Başla</a>
                 </div>
                 <div class="pricing-card popular">
                     <div class="popular-badge">En Popüler</div>
@@ -263,7 +263,7 @@
                         <li><span class="check">✓</span>Gelişmiş raporlar</li>
                         <li><span class="check">✓</span>Aile paylaşımı</li>
                     </ul>
-                    <a href="#register" class="pricing-btn primary">Premium Ol</a>
+                    <a href="login.html#register" class="pricing-btn primary">Premium Ol</a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-header">
@@ -282,7 +282,7 @@
                         <li><span class="check">✓</span>Öncelikli destek</li>
                         <li><span class="check">✓</span>API erişimi</li>
                     </ul>
-                    <a href="#register" class="pricing-btn outline">Pro Ol</a>
+                    <a href="index.html#register" class="pricing-btn outline">Pro Ol</a>
                 </div>
             </div>
         </div>
@@ -339,7 +339,7 @@
             <div class="cta-content">
                 <h2>Hemen Bugün Başlayın!</h2>
                 <p>İlk 7 gün ücretsiz. Kredi kartı gerekmez. Şimdi adım atın, sağlıklı yarınlar sizi bekliyor!</p>
-                <a href="#register" class="cta-btn">
+                <a href="login.html#register" class="cta-btn">
                     <span>Ücretsiz Deneyin</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -399,410 +399,9 @@
         </div>
     </footer>
 
-    <!-- Auth Modal - Login/Register Forms -->
-    <div id="authModal" class="auth-modal" style="display: none;">
-        <div class="auth-modal-overlay"></div>
-        <div class="auth-modal-content">
-            <button class="auth-modal-close" onclick="closeAuthModal()">&times;</button>
-            
-            <div class="auth-logo">
-                <div class="auth-logo-icon">✓</div>
-                <h2>Sigara Bırak</h2>
-                <p>Yeni Bir Başlangıç</p>
-            </div>
-
-            <!-- Login Form -->
-            <form id="loginForm" class="auth-form" method="POST" action="javascript:void(0)" onsubmit="event.preventDefault(); handleLogin(event);">
-                <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder=" ">
-                    <label for="email">E-posta Adresiniz</label>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" name="password" required placeholder=" ">
-                    <label for="password">Şifreniz</label>
-                    <button type="button" class="toggle-password" id="togglePassword">👁</button>
-                </div>
-                <div class="form-options">
-                    <label class="checkbox-wrapper">
-                        <input type="checkbox" id="rememberMe">
-                        <span>Beni hatırla</span>
-                    </label>
-                    <a href="#forgot" class="forgot-link">Şifremi unuttum</a>
-                </div>
-                <button type="submit" class="auth-btn" id="loginBtn">Giriş Yap</button>
-                <p class="auth-switch">
-                    Hesabınız yok mu? <a href="#register" class="switch-link">Üye Ol</a>
-                </p>
-            </form>
-
-            <!-- Register Form -->
-            <form id="registerForm" class="auth-form" method="POST" action="javascript:void(0)" onsubmit="event.preventDefault(); handleRegister(event);" style="display: none;">
-                <div class="form-group">
-                    <input type="text" id="regName" name="fullName" required placeholder=" ">
-                    <label for="regName">Ad Soyad</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="regEmail" name="email" required placeholder=" ">
-                    <label for="regEmail">E-posta Adresiniz</label>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="regPassword" name="password" required placeholder=" ">
-                    <label for="regPassword">Şifreniz</label>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="regPasswordConfirm" required placeholder=" ">
-                    <label for="regPasswordConfirm">Şifre Tekrar</label>
-                </div>
-                <div class="form-options">
-                    <label class="checkbox-wrapper">
-                        <input type="checkbox" id="agreeTerms" required>
-                        <span><a href="#">Kullanım koşullarını</a> kabul ediyorum</span>
-                    </label>
-                </div>
-                <button type="submit" class="auth-btn" id="registerBtn">Üye Ol</button>
-                <p class="auth-switch">
-                    Zaten hesabınız var mı? <a href="#login" class="switch-link">Giriş Yap</a>
-                </p>
-            </form>
-
-            <!-- Forgot Password Form -->
-            <form id="forgotForm" class="auth-form" method="POST" action="javascript:void(0)" onsubmit="event.preventDefault(); handleForgot(event);" style="display: none;">
-                <p class="forgot-info">Şifrenizi sıfırlamak için e-posta adresinizi girin.</p>
-                <div class="form-group">
-                    <input type="email" id="forgotEmail" name="email" required placeholder=" ">
-                    <label for="forgotEmail">E-posta Adresiniz</label>
-                </div>
-                <button type="submit" class="auth-btn" id="forgotBtn">Sıfırlama Bağlantısı Gönder</button>
-                <p class="auth-switch">
-                    <a href="#login" class="switch-link">← Giriş sayfasına dön</a>
-                </p>
-            </form>
-
-            <!-- Toast Notification -->
-            <div id="toast" class="toast"></div>
-        </div>
-    </div>
-
-    <!-- Auth Modal Styles -->
-    <style>
-        .auth-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .auth-modal-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-        }
-        .auth-modal-content {
-            position: relative;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        .auth-modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: #94a3b8;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .auth-modal-close:hover {
-            color: white;
-        }
-        .auth-logo {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        .auth-logo-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 1rem;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-        .auth-logo h2 {
-            color: white;
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        .auth-logo p {
-            color: #94a3b8;
-            margin: 0.25rem 0 0;
-            font-size: 0.875rem;
-        }
-        .auth-form .form-group {
-            position: relative;
-            margin-bottom: 1rem;
-        }
-        .auth-form input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 0.75rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        .auth-form input:focus {
-            outline: none;
-            border-color: #667eea;
-            background: rgba(255, 255, 255, 0.08);
-        }
-        .auth-form input:not(:placeholder-shown) + label,
-        .auth-form input:focus + label {
-            top: -0.6rem;
-            left: 0.75rem;
-            font-size: 0.75rem;
-            color: #667eea;
-            background: #1a1a2e;
-            padding: 0 0.5rem;
-        }
-        .auth-form label {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            color: #94a3b8;
-            font-size: 0.875rem;
-            pointer-events: none;
-            transition: all 0.3s;
-        }
-        .toggle-password {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #94a3b8;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-        .form-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-        }
-        .checkbox-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #94a3b8;
-            cursor: pointer;
-        }
-        .forgot-link, .switch-link {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .forgot-link:hover, .switch-link:hover {
-            color: #764ba2;
-        }
-        .auth-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        .auth-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-        .auth-switch {
-            text-align: center;
-            margin-top: 1.5rem;
-            color: #94a3b8;
-            font-size: 0.875rem;
-        }
-        .forgot-info {
-            color: #94a3b8;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-        }
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #ef4444;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            opacity: 0;
-            transition: all 0.3s;
-            z-index: 1001;
-        }
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-        .toast.success {
-            background: #48bb78;
-        }
-        @media (max-width: 480px) {
-            .auth-modal-content {
-                width: 95%;
-                padding: 1.5rem;
-            }
-        }
-    </style>
-
-    <!-- Auth Modal Script -->
-    <script>
-        // Wait for DOM to be ready
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Auth modal script loaded');
-            
-            // Auth Modal Functions
-            window.openAuthModal = function() {
-                const modal = document.getElementById('authModal');
-                if (modal) {
-                    modal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                    console.log('Modal opened');
-                }
-            };
-            
-            window.closeAuthModal = function() {
-                const modal = document.getElementById('authModal');
-                if (modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = '';
-                }
-                // Clear hash
-                history.pushState('', document.title, window.location.pathname + window.location.search);
-            };
-            
-            window.showLoginForm = function() {
-                const loginForm = document.getElementById('loginForm');
-                const registerForm = document.getElementById('registerForm');
-                const forgotForm = document.getElementById('forgotForm');
-                
-                if (loginForm) loginForm.style.display = 'block';
-                if (registerForm) registerForm.style.display = 'none';
-                if (forgotForm) forgotForm.style.display = 'none';
-                
-                openAuthModal();
-                console.log('Login form shown');
-            };
-            
-            window.showRegisterForm = function() {
-                const loginForm = document.getElementById('loginForm');
-                const registerForm = document.getElementById('registerForm');
-                const forgotForm = document.getElementById('forgotForm');
-                
-                if (loginForm) loginForm.style.display = 'none';
-                if (registerForm) registerForm.style.display = 'block';
-                if (forgotForm) forgotForm.style.display = 'none';
-                
-                openAuthModal();
-                console.log('Register form shown');
-            };
-            
-            window.showForgotForm = function() {
-                const loginForm = document.getElementById('loginForm');
-                const registerForm = document.getElementById('registerForm');
-                const forgotForm = document.getElementById('forgotForm');
-                
-                if (loginForm) loginForm.style.display = 'none';
-                if (registerForm) registerForm.style.display = 'none';
-                if (forgotForm) forgotForm.style.display = 'block';
-                
-                openAuthModal();
-                console.log('Forgot form shown');
-            };
-            
-            // Handle hash changes
-            function handleHash() {
-                const hash = window.location.hash.replace('#', '');
-                console.log('Hash changed:', hash);
-                
-                if (hash === 'login') {
-                    showLoginForm();
-                } else if (hash === 'register') {
-                    showRegisterForm();
-                } else if (hash === 'forgot') {
-                    showForgotForm();
-                } else {
-                    closeAuthModal();
-                }
-            }
-            
-            // Listen for hash changes
-            window.addEventListener('hashchange', handleHash);
-            
-            // Check hash on page load
-            if (window.location.hash) {
-                console.log('Initial hash:', window.location.hash);
-                handleHash();
-            }
-            
-            // Close modal on overlay click
-            const overlay = document.querySelector('.auth-modal-overlay');
-            if (overlay) {
-                overlay.addEventListener('click', closeAuthModal);
-            }
-            
-            // Toast notification
-            window.showToast = function(message, type = 'error') {
-                const toast = document.getElementById('toast');
-                if (toast) {
-                    toast.textContent = message;
-                    toast.className = 'toast ' + type;
-                    setTimeout(() => toast.classList.add('show'), 10);
-                    setTimeout(() => toast.classList.remove('show'), 4000);
-                }
-            };
-            
-            console.log('Auth modal ready');
-        });
-    </script>
-
     <!-- Supabase for Landing Page -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/config.js"></script>
-    <script src="js/errorHandler.js"></script>
-    <script src="js/validation.js"></script>
     <script src="js/supabase.js"></script>
-    <script src="js/pwa.js"></script>
     <script src="js/landing.js"></script>
 </body>
 </html>

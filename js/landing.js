@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initPricingToggle();
     initSmoothScroll();
     initScrollAnimations();
-    checkLoggedInUser();
 });
 
 // Mobile Navigation
