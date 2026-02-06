@@ -1,60 +1,109 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profilim | Sigara Bırak</title>
     <link rel="stylesheet" href="css/dashboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="dashboard-body">
     <div class="dashboard-wrapper">
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="sidebar-header">
-                <a href="index.html" class="sidebar-logo"><div class="sidebar-logo-icon">✓</div><span>Sigara Bırak</span></a>
+                <a href="index.html" class="sidebar-logo">
+                    <div class="sidebar-logo-icon">✓</div><span>Sigara Bırak</span>
+                </a>
             </div>
             <nav class="sidebar-nav">
-                <div class="nav-section"><div class="nav-section-title">Hesap</div>
-                    <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a>
-                    <a href="profile.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profilim</span></a>
-                    <a href="settings.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Ayarlar</span></a>
+                <div class="nav-section">
+                    <div class="nav-section-title">Hesap</div>
+                    <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                        </svg><span>Dashboard</span></a>
+                    <a href="profile.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg><span>Profilim</span></a>
+                    <a href="settings.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                        </svg><span>Ayarlar</span></a>
                 </div>
             </nav>
-            <div class="sidebar-footer"><div class="user-profile"><div class="user-avatar">AY</div><div class="user-info"><div class="user-name">Ahmet Yılmaz</div><div class="user-status">45 gün sigarasız</div></div></div></div>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">AY</div>
+                    <div class="user-info">
+                        <div class="user-name">Ahmet Yılmaz</div>
+                        <div class="user-status">45 gün sigarasız</div>
+                    </div>
+                </div>
+            </div>
         </aside>
 
         <main class="dashboard-main">
             <header class="dashboard-header">
-                <div class="header-title"><h1>👤 Profilim</h1><p class="header-subtitle">Hesap bilgilerinizi yönetin</p></div>
+                <div class="header-title">
+                    <h1>👤 Profilim</h1>
+                    <p class="header-subtitle">Hesap bilgilerinizi yönetin</p>
+                </div>
             </header>
 
             <div class="dashboard-grid grid-cols-2">
                 <div class="dashboard-card">
-                    <div class="card-header"><h3 class="card-title">Kişisel Bilgiler</h3></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Kişisel Bilgiler</h3>
+                    </div>
                     <div class="card-content">
                         <form class="profile-form">
                             <div class="form-row">
-                                <div class="form-group"><label>Ad</label><input type="text" value="Ahmet" class="form-input"/></div>
-                                <div class="form-group"><label>Soyad</label><input type="text" value="Yılmaz" class="form-input"/></div>
+                                <div class="form-group"><label>Ad</label><input type="text" value="Ahmet"
+                                        class="form-input" /></div>
+                                <div class="form-group"><label>Soyad</label><input type="text" value="Yılmaz"
+                                        class="form-input" /></div>
                             </div>
-                            <div class="form-group"><label>E-posta</label><input type="email" value="ahmet@email.com" class="form-input"/></div>
-                            <div class="form-group"><label>Telefon</label><input type="tel" value="+90 555 123 4567" class="form-input"/></div>
-                            <div class="form-group"><label>Bio</label><textarea class="form-input" rows="3">Sigarayı bırakma yolculuğumda 45. günüm! 🚭</textarea></div>
+                            <div class="form-group"><label>E-posta</label><input type="email" value="ahmet@email.com"
+                                    class="form-input" /></div>
+                            <div class="form-group"><label>Telefon</label><input type="tel" value="+90 555 123 4567"
+                                    class="form-input" /></div>
+                            <div class="form-group"><label>Bio</label><textarea class="form-input"
+                                    rows="3">Sigarayı bırakma yolculuğumda 45. günüm! 🚭</textarea></div>
                             <button type="submit" class="save-btn">Değişiklikleri Kaydet</button>
                         </form>
                     </div>
                 </div>
 
                 <div class="dashboard-card">
-                    <div class="card-header"><h3 class="card-title">Sigara Bırakma Bilgileri</h3></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Sigara Bırakma Bilgileri</h3>
+                    </div>
                     <div class="card-content">
                         <form class="profile-form">
-                            <div class="form-group"><label>Bırakma Tarihi</label><input type="datetime-local" value="2026-01-22T08:00" class="form-input"/></div>
+                            <div class="form-group"><label>Bırakma Tarihi</label><input type="datetime-local"
+                                    value="2026-01-22T08:00" class="form-input" /></div>
                             <div class="form-row">
-                                <div class="form-group"><label>Günlük Sigara (Adet)</label><input type="number" value="15" class="form-input"/></div>
-                                <div class="form-group"><label>Paket Fiyatı (₺)</label><input type="number" value="42" class="form-input"/></div>
+                                <div class="form-group"><label>Günlük Sigara (Adet)</label><input type="number"
+                                        value="15" class="form-input" /></div>
+                                <div class="form-group"><label>Paket Fiyatı (₺)</label><input type="number" value="42"
+                                        class="form-input" /></div>
                             </div>
-                            <div class="form-group"><label>Bırakma Sebebim</label><select class="form-input"><option>Sağlık</option><option selected>Parasal</option><option>Aile</option><option>Diğer</option></select></div>
+                            <div class="form-group"><label>Bırakma Sebebim</label><select class="form-input">
+                                    <option>Sağlık</option>
+                                    <option selected>Parasal</option>
+                                    <option>Aile</option>
+                                    <option>Diğer</option>
+                                </select></div>
                             <button type="submit" class="save-btn">Güncelle</button>
                         </form>
                     </div>
@@ -64,28 +113,29 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
     <script src="js/supabase.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             window.SupabaseConfig.init();
-            
+
             const user = await window.SupabaseConfig.checkAuth();
             if (!user) {
                 window.location.href = 'index.html';
                 return;
             }
-            
+
             // Load profile data
             try {
                 const profile = await window.SupabaseConfig.profile.get(user.id);
                 const quitInfo = await window.SupabaseConfig.quitInfo.get(user.id);
-                
+
                 if (profile) {
                     document.querySelector('input[value="Ahmet"]').value = profile.full_name?.split(' ')[0] || '';
                     document.querySelector('input[value="Yılmaz"]').value = profile.full_name?.split(' ')[1] || '';
                     document.querySelector('input[value="ahmet@email.com"]').value = user.email;
                 }
-                
+
                 if (quitInfo) {
                     // Update form with quit info
                     const inputs = document.querySelectorAll('.form-input');
@@ -101,20 +151,20 @@
             } catch (e) {
                 console.log('Profil bilgileri yüklenemedi');
             }
-            
+
             // Handle form submission
             document.querySelector('.profile-form').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                
+
                 const formData = new FormData(e.target);
                 const fullName = `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim();
-                
+
                 try {
                     await window.SupabaseConfig.profile.update(user.id, {
                         full_name: fullName,
                         updated_at: new Date().toISOString()
                     });
-                    
+
                     const saveBtn = document.querySelector('.save-btn');
                     saveBtn.textContent = '✓ Kaydedildi';
                     setTimeout(() => saveBtn.textContent = 'Değişiklikleri Kaydet', 2000);
@@ -124,17 +174,68 @@
             });
         });
     </script>
-    
+
     <style>
-        .profile-form { display: flex; flex-direction: column; gap: 1.25rem; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-        .form-group label { font-size: 0.875rem; font-weight: 500; color: #64748b; }
-        .form-input { padding: 0.75rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-size: 0.9rem; color: #1e293b; transition: border-color 0.2s; }
-        .form-input:focus { outline: none; border-color: #667eea; }
-        .save-btn { padding: 0.875rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
-        .save-btn:hover { opacity: 0.9; }
-        @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } }
+        .profile-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .form-input {
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: #1e293b;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .save-btn {
+            padding: 0.875rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .save-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </body>
+
 </html>

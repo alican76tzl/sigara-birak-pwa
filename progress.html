@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İlerlemem | Sigara Bırak</title>
     <link rel="stylesheet" href="css/dashboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="dashboard-body">
     <div class="dashboard-wrapper">
         <aside class="dashboard-sidebar" id="sidebar">
@@ -20,19 +23,33 @@
                 <div class="nav-section">
                     <div class="nav-section-title">Ana Menü</div>
                     <a href="dashboard.html" class="nav-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                        </svg>
                         <span>Dashboard</span>
                     </a>
                     <a href="progress.html" class="nav-item active">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14,2 14,8 20,8" />
+                        </svg>
                         <span>İlerlemem</span>
                     </a>
                     <a href="savings.html" class="nav-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
                         <span>Tasarruf</span>
                     </a>
                     <a href="community.html" class="nav-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        </svg>
                         <span>Topluluk</span>
                     </a>
                 </div>
@@ -120,7 +137,8 @@
                                     <span class="recovery-percent">65%</span>
                                 </div>
                             </div>
-                            <p class="recovery-text">Akciğer kapasiteniz %65 iyileşti. Tam iyileşme için 12 ay gerekiyor.</p>
+                            <p class="recovery-text">Akciğer kapasiteniz %65 iyileşti. Tam iyileşme için 12 ay
+                                gerekiyor.</p>
                         </div>
                     </div>
                 </div>
@@ -133,9 +151,9 @@
                         <div class="heart-health">
                             <div class="health-ring">
                                 <svg viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e2e8f0" stroke-width="8"/>
-                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#ef4444" stroke-width="8" 
-                                            stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e2e8f0" stroke-width="8" />
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#ef4444" stroke-width="8"
+                                        stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" />
                                 </svg>
                                 <div class="ring-text">75%</div>
                             </div>
@@ -163,65 +181,226 @@
     </div>
 
     <style>
-        .milestones-timeline { display: flex; flex-direction: column; gap: 0; }
-        .milestone-item { display: flex; gap: 1.5rem; padding: 1.5rem; border-left: 3px solid #e2e8f0; margin-left: 1.5rem; position: relative; }
-        .milestone-item::before { content: ''; position: absolute; left: -9px; top: 2rem; width: 15px; height: 15px; border-radius: 50%; background: #e2e8f0; }
-        .milestone-item.completed { border-left-color: #22c55e; }
-        .milestone-item.completed::before { background: #22c55e; }
-        .milestone-item.current { border-left-color: #667eea; background: rgba(102, 126, 234, 0.05); }
-        .milestone-item.current::before { background: #667eea; box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2); }
-        .milestone-item.pending { opacity: 0.6; }
-        .milestone-icon { width: 40px; height: 40px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
-        .milestone-item.completed .milestone-icon { background: #22c55e; color: white; }
-        .milestone-item.current .milestone-icon { background: #667eea; color: white; }
-        .milestone-content h4 { font-weight: 600; color: #1e293b; margin-bottom: 0.25rem; }
-        .milestone-content p { color: #64748b; font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .milestone-date { font-size: 0.8rem; color: #94a3b8; }
-        .lung-recovery { text-align: center; }
-        .recovery-chart { margin-bottom: 1rem; }
-        .recovery-bar { width: 100%; height: 40px; background: #e2e8f0; border-radius: 20px; position: relative; overflow: hidden; }
-        .recovery-bar::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: var(--progress); background: linear-gradient(90deg, #22c55e, #16a34a); border-radius: 20px; transition: width 1s ease; }
-        .recovery-percent { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-weight: 700; color: #1e293b; }
-        .recovery-text { font-size: 0.9rem; color: #64748b; line-height: 1.6; }
-        .heart-health { text-align: center; }
-        .health-ring { width: 150px; height: 150px; margin: 0 auto 1rem; position: relative; }
-        .health-ring svg { transform: rotate(-90deg); }
-        .ring-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.75rem; font-weight: 700; color: #ef4444; }
-        .benefits-list { list-style: none; }
-        .benefits-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; color: #64748b; }
-        .benefits-list li:last-child { border-bottom: none; }
-        .benefits-list span { width: 24px; height: 24px; background: #22c55e; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
-        .benefits-list li:last-child span { background: #667eea; }
+        .milestones-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .milestone-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-left: 3px solid #e2e8f0;
+            margin-left: 1.5rem;
+            position: relative;
+        }
+
+        .milestone-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #e2e8f0;
+        }
+
+        .milestone-item.completed {
+            border-left-color: #22c55e;
+        }
+
+        .milestone-item.completed::before {
+            background: #22c55e;
+        }
+
+        .milestone-item.current {
+            border-left-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .milestone-item.current::before {
+            background: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+
+        .milestone-item.pending {
+            opacity: 0.6;
+        }
+
+        .milestone-icon {
+            width: 40px;
+            height: 40px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .milestone-item.completed .milestone-icon {
+            background: #22c55e;
+            color: white;
+        }
+
+        .milestone-item.current .milestone-icon {
+            background: #667eea;
+            color: white;
+        }
+
+        .milestone-content h4 {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .milestone-content p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .lung-recovery {
+            text-align: center;
+        }
+
+        .recovery-chart {
+            margin-bottom: 1rem;
+        }
+
+        .recovery-bar {
+            width: 100%;
+            height: 40px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recovery-bar::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: var(--progress);
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            border-radius: 20px;
+            transition: width 1s ease;
+        }
+
+        .recovery-percent {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .recovery-text {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .heart-health {
+            text-align: center;
+        }
+
+        .health-ring {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .health-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .ring-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #ef4444;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #64748b;
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefits-list span {
+            width: 24px;
+            height: 24px;
+            background: #22c55e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .benefits-list li:last-child span {
+            background: #667eea;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
     <script src="js/supabase.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             window.SupabaseConfig.init();
-            
+
             const user = await window.SupabaseConfig.checkAuth();
             if (!user) {
                 window.location.href = 'index.html';
                 return;
             }
-            
+
             // Load quit info and update progress
             try {
                 const quitInfo = await window.SupabaseConfig.quitInfo.get(user.id);
                 if (quitInfo) {
                     const days = Math.floor((new Date() - new Date(quitInfo.quit_date)) / (1000 * 60 * 60 * 24));
-                    
+
                     // Update stats
                     document.querySelectorAll('.stat-value-dash').forEach(el => {
                         if (el.textContent.includes('45')) el.textContent = days;
                     });
-                    
+
                     // Update lung recovery
                     const recoveryPercent = Math.min(100, Math.floor((days / 365) * 100));
                     document.querySelector('.recovery-bar').style.setProperty('--progress', recoveryPercent + '%');
                     document.querySelector('.recovery-percent').textContent = recoveryPercent + '%';
-                    
+
                     // Update health ring
                     const heartPercent = Math.min(100, Math.floor((days / 180) * 100));
                     document.querySelector('.ring-text').textContent = heartPercent + '%';
@@ -232,4 +411,5 @@
         });
     </script>
 </body>
+
 </html>

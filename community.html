@@ -1,72 +1,178 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topluluk | Sigara Bırak</title>
     <link rel="stylesheet" href="css/dashboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="dashboard-body">
     <div class="dashboard-wrapper">
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="sidebar-header">
-                <a href="index.html" class="sidebar-logo"><div class="sidebar-logo-icon">✓</div><span>Sigara Bırak</span></a>
+                <a href="index.html" class="sidebar-logo">
+                    <div class="sidebar-logo-icon">✓</div><span>Sigara Bırak</span>
+                </a>
             </div>
             <nav class="sidebar-nav">
                 <div class="nav-section">
                     <div class="nav-section-title">Ana Menü</div>
-                    <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>Dashboard</span></a>
-                    <a href="progress.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg><span>İlerlemem</span></a>
-                    <a href="savings.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Tasarruf</span></a>
-                    <a href="community.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><span>Topluluk</span></a>
+                    <a href="dashboard.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                        </svg><span>Dashboard</span></a>
+                    <a href="progress.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14,2 14,8 20,8" />
+                        </svg><span>İlerlemem</span></a>
+                    <a href="savings.html" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg><span>Tasarruf</span></a>
+                    <a href="community.html" class="nav-item active"><svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        </svg><span>Topluluk</span></a>
                 </div>
             </nav>
             <div class="sidebar-footer">
-                <div class="user-profile"><div class="user-avatar">AY</div><div class="user-info"><div class="user-name">Ahmet Yılmaz</div><div class="user-status">45 gün sigarasız</div></div></div>
+                <div class="user-profile">
+                    <div class="user-avatar">AY</div>
+                    <div class="user-info">
+                        <div class="user-name">Ahmet Yılmaz</div>
+                        <div class="user-status">45 gün sigarasız</div>
+                    </div>
+                </div>
             </div>
         </aside>
 
         <main class="dashboard-main">
             <header class="dashboard-header">
-                <div class="header-title"><h1>👥 Topluluk</h1><p class="header-subtitle">Deneyim paylaşın, motivasyon alın, birlikte başarın</p></div>
-                <div class="header-actions"><button class="header-btn btn-primary" onclick="showNewPost()">+ Yeni Gönderi</button></div>
+                <div class="header-title">
+                    <h1>👥 Topluluk</h1>
+                    <p class="header-subtitle">Deneyim paylaşın, motivasyon alın, birlikte başarın</p>
+                </div>
+                <div class="header-actions"><button class="header-btn btn-primary" onclick="showNewPost()">+ Yeni
+                        Gönderi</button></div>
             </header>
 
             <div class="dashboard-grid grid-cols-3">
                 <div class="dashboard-card" style="grid-column: span 2;">
-                    <div class="card-header"><h3 class="card-title">💬 Son Gönderiler</h3></div>
+                    <div class="card-header">
+                        <h3 class="card-title">💬 Son Gönderiler</h3>
+                    </div>
                     <div class="card-content">
                         <div class="posts-list">
                             <div class="post-item">
-                                <div class="post-header"><div class="post-avatar">SK</div><div class="post-meta"><div class="post-author">Selin K.</div><div class="post-time">2 saat önce • 30 gün sigarasız</div></div></div>
-                                <div class="post-content"><p>Bugün 30. günümü tamamladım! İlk hafta çok zordu ama şimdi çok daha iyiyim. Herkese sabır diliyorum! 🎉</p></div>
-                                <div class="post-actions"><button class="post-btn">❤️ 24</button><button class="post-btn">💬 8 yorum</button><button class="post-btn">↗️ Paylaş</button></div>
+                                <div class="post-header">
+                                    <div class="post-avatar">SK</div>
+                                    <div class="post-meta">
+                                        <div class="post-author">Selin K.</div>
+                                        <div class="post-time">2 saat önce • 30 gün sigarasız</div>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <p>Bugün 30. günümü tamamladım! İlk hafta çok zordu ama şimdi çok daha iyiyim.
+                                        Herkese sabır diliyorum! 🎉</p>
+                                </div>
+                                <div class="post-actions"><button class="post-btn">❤️ 24</button><button
+                                        class="post-btn">💬 8 yorum</button><button class="post-btn">↗️ Paylaş</button>
+                                </div>
                             </div>
                             <div class="post-item">
-                                <div class="post-header"><div class="post-avatar">ME</div><div class="post-meta"><div class="post-author">Mehmet E.</div><div class="post-time">5 saat önce • 90 gün sigarasız</div></div></div>
-                                <div class="post-content"><p>Dün partide içki içerken sigara içme isteği geldi ama dayandım. Ufak zaferler büyük zaferlere yol açar! 💪</p></div>
-                                <div class="post-actions"><button class="post-btn">❤️ 56</button><button class="post-btn">💬 12 yorum</button><button class="post-btn">↗️ Paylaş</button></div>
+                                <div class="post-header">
+                                    <div class="post-avatar">ME</div>
+                                    <div class="post-meta">
+                                        <div class="post-author">Mehmet E.</div>
+                                        <div class="post-time">5 saat önce • 90 gün sigarasız</div>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <p>Dün partide içki içerken sigara içme isteği geldi ama dayandım. Ufak zaferler
+                                        büyük zaferlere yol açar! 💪</p>
+                                </div>
+                                <div class="post-actions"><button class="post-btn">❤️ 56</button><button
+                                        class="post-btn">💬 12 yorum</button><button class="post-btn">↗️ Paylaş</button>
+                                </div>
                             </div>
                             <div class="post-item">
-                                <div class="post-header"><div class="post-avatar">AD</div><div class="post-meta"><div class="post-author">Ayşe D.</div><div class="post-time">1 gün önce • 7 gün sigarasız</div></div></div>
-                                <div class="post-content"><p>İlk hafta çok zorlanıyorum. Özellikle kahve içerken... Siz nasıl başa çıkıyorsunuz? Tavsiye verebilir misiniz?</p></div>
-                                <div class="post-actions"><button class="post-btn">❤️ 18</button><button class="post-btn">💬 15 yorum</button><button class="post-btn">↗️ Paylaş</button></div>
+                                <div class="post-header">
+                                    <div class="post-avatar">AD</div>
+                                    <div class="post-meta">
+                                        <div class="post-author">Ayşe D.</div>
+                                        <div class="post-time">1 gün önce • 7 gün sigarasız</div>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <p>İlk hafta çok zorlanıyorum. Özellikle kahve içerken... Siz nasıl başa
+                                        çıkıyorsunuz? Tavsiye verebilir misiniz?</p>
+                                </div>
+                                <div class="post-actions"><button class="post-btn">❤️ 18</button><button
+                                        class="post-btn">💬 15 yorum</button><button class="post-btn">↗️ Paylaş</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="dashboard-card">
-                    <div class="card-header"><h3 class="card-title">🏆 Liderlik Tablosu</h3></div>
+                    <div class="card-header">
+                        <h3 class="card-title">🏆 Liderlik Tablosu</h3>
+                    </div>
                     <div class="card-content">
                         <div class="leaderboard">
-                            <div class="leader-item rank-1"><div class="leader-rank">🥇</div><div class="leader-info"><div class="leader-name">Fatma K.</div><div class="leader-days">850 gün</div></div></div>
-                            <div class="leader-item rank-2"><div class="leader-rank">🥈</div><div class="leader-info"><div class="leader-name">Ali R.</div><div class="leader-days">720 gün</div></div></div>
-                            <div class="leader-item rank-3"><div class="leader-rank">🥉</div><div class="leader-info"><div class="leader-name">Zeynep T.</div><div class="leader-days">645 gün</div></div></div>
-                            <div class="leader-item"><div class="leader-rank">4</div><div class="leader-info"><div class="leader-name">Can B.</div><div class="leader-days">510 gün</div></div></div>
-                            <div class="leader-item"><div class="leader-rank">5</div><div class="leader-info"><div class="leader-name">Elif S.</div><div class="leader-days">445 gün</div></div></div>
-                            <div class="leader-item you"><div class="leader-rank">42</div><div class="leader-info"><div class="leader-name">Siz (Ahmet Y.)</div><div class="leader-days">45 gün</div></div></div>
+                            <div class="leader-item rank-1">
+                                <div class="leader-rank">🥇</div>
+                                <div class="leader-info">
+                                    <div class="leader-name">Fatma K.</div>
+                                    <div class="leader-days">850 gün</div>
+                                </div>
+                            </div>
+                            <div class="leader-item rank-2">
+                                <div class="leader-rank">🥈</div>
+                                <div class="leader-info">
+                                    <div class="leader-name">Ali R.</div>
+                                    <div class="leader-days">720 gün</div>
+                                </div>
+                            </div>
+                            <div class="leader-item rank-3">
+                                <div class="leader-rank">🥉</div>
+                                <div class="leader-info">
+                                    <div class="leader-name">Zeynep T.</div>
+                                    <div class="leader-days">645 gün</div>
+                                </div>
+                            </div>
+                            <div class="leader-item">
+                                <div class="leader-rank">4</div>
+                                <div class="leader-info">
+                                    <div class="leader-name">Can B.</div>
+                                    <div class="leader-days">510 gün</div>
+                                </div>
+                            </div>
+                            <div class="leader-item">
+                                <div class="leader-rank">5</div>
+                                <div class="leader-info">
+                                    <div class="leader-name">Elif S.</div>
+                                    <div class="leader-days">445 gün</div>
+                                </div>
+                            </div>
+                            <div class="leader-item you">
+                                <div class="leader-rank">42</div>
+                                <div class="leader-info">
+                                    <div class="leader-name">Siz (Ahmet Y.)</div>
+                                    <div class="leader-days">45 gün</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,53 +181,157 @@
     </div>
 
     <style>
-        .posts-list { display: flex; flex-direction: column; gap: 1.5rem; }
-        .post-item { padding: 1.5rem; background: #f8fafc; border-radius: 12px; }
-        .post-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-        .post-avatar { width: 44px; height: 44px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 0.875rem; }
-        .post-author { font-weight: 600; color: #1e293b; }
-        .post-time { font-size: 0.8rem; color: #94a3b8; }
-        .post-content p { color: #64748b; line-height: 1.6; }
-        .post-actions { display: flex; gap: 1rem; margin-top: 1rem; }
-        .post-btn { background: none; border: none; color: #64748b; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem; transition: color 0.2s; }
-        .post-btn:hover { color: #667eea; }
-        .leaderboard { display: flex; flex-direction: column; gap: 0.75rem; }
-        .leader-item { display: flex; align-items: center; gap: 1rem; padding: 0.875rem; background: #f8fafc; border-radius: 10px; }
-        .leader-item.rank-1, .leader-item.rank-2, .leader-item.rank-3 { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); }
-        .leader-item.you { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .leader-item.you .leader-days { color: rgba(255, 255, 255, 0.8); }
-        .leader-rank { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
-        .leader-info { flex: 1; }
-        .leader-name { font-weight: 600; font-size: 0.95rem; }
-        .leader-days { font-size: 0.8rem; color: #64748b; }
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .post-item {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .post-author {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .post-time {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .post-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .post-btn {
+            background: none;
+            border: none;
+            color: #64748b;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s;
+        }
+
+        .post-btn:hover {
+            color: #667eea;
+        }
+
+        .leaderboard {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .leader-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.875rem;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .leader-item.rank-1,
+        .leader-item.rank-2,
+        .leader-item.rank-3 {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+
+        .leader-item.you {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .leader-item.you .leader-days {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .leader-rank {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .leader-info {
+            flex: 1;
+        }
+
+        .leader-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .leader-days {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
     <script src="js/supabase.js"></script>
     <script>
         let currentUser = null;
-        
+
         document.addEventListener('DOMContentLoaded', async () => {
             window.SupabaseConfig.init();
-            
+
             currentUser = await window.SupabaseConfig.checkAuth();
             if (!currentUser) {
                 window.location.href = 'index.html';
                 return;
             }
-            
+
             // Load posts
             await loadPosts();
-            
+
             // Load leaderboard
             await loadLeaderboard();
         });
-        
+
         async function loadPosts() {
             try {
                 const posts = await window.SupabaseConfig.community.getPosts(20);
                 const postsContainer = document.querySelector('.posts-list');
-                
+
                 if (posts && posts.length > 0) {
                     postsContainer.innerHTML = posts.map(post => `
                         <div class="post-item" data-id="${post.id}">
@@ -144,12 +354,12 @@
                 console.log('Gönderiler yüklenemedi:', e);
             }
         }
-        
+
         async function loadLeaderboard() {
             try {
                 const leaders = await window.SupabaseConfig.leaderboard.get(10);
                 const leaderboardContainer = document.querySelector('.leaderboard');
-                
+
                 if (leaders && leaders.length > 0) {
                     let html = '';
                     leaders.forEach((leader, index) => {
@@ -170,7 +380,7 @@
                 console.log('Liderlik tablosu yüklenemedi:', e);
             }
         }
-        
+
         async function likePost(postId) {
             try {
                 await window.SupabaseConfig.community.likePost(currentUser.id, postId);
@@ -179,7 +389,7 @@
                 console.log('Beğeni hatası:', e);
             }
         }
-        
+
         async function showNewPost() {
             const content = prompt('Gönderinizi yazın:');
             if (content && content.trim()) {
@@ -193,7 +403,8 @@
             }
         }
     </script>
-    
+
     <script>// Eski fonksiyon yerine yukarıdaki kullanılıyor</script>
 </body>
+
 </html>
