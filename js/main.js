@@ -478,6 +478,18 @@ document.addEventListener('DOMContentLoaded', () => {
         app.showLoginForm();
     }
     
+    // Listen for hash changes
+    window.addEventListener('hashchange', () => {
+        const newHash = window.location.hash.replace('#', '');
+        if (newHash === 'register') {
+            app.showRegisterForm();
+        } else if (newHash === 'forgot') {
+            app.showForgotForm();
+        } else {
+            app.showLoginForm();
+        }
+    });
+    
     console.log('%c Sigara Bırak ', 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px 20px; font-size: 20px; font-weight: bold; border-radius: 8px;');
     console.log('%c Giriş sayfası yüklendi! 🚭', 'color: #667eea; font-size: 14px;');
     console.log('%c Demo giriş: demo@sigarabrak.com / demo123', 'color: #48bb78; font-size: 12px;');
