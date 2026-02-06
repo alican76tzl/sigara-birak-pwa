@@ -55,54 +55,51 @@ async function signUp(email, password, fullName) {
     
     console.log('🚀 Kayıt başlatılıyor...', { email, fullName });
     
-    // Önce metadata-only signup dene (trigger devre dışı bırakılmış gibi)
+    // Kayıt dene
     const { data, error } = await supabaseClient.auth.signUp({
         email: email,
         password: password,
         options: {
-            data: {
-                full_name: fullName
-            },
-            // Trigger hatasını bypass et
+            data: { full_name: fullName },
             emailRedirectTo: window.location.origin
         }
     });
     
     if (error) {
         console.error('❌ Kayıt hatası:', error);
-        
-        // Eğer trigger hatasıysa ama kullanıcı oluşturulduysa
-        if (error.message && error.message.includes('Database error')) {
-            console.log('⚠️ Database hatası alındı, kullanıcı oluşmuş mu kontrol ediliyor...');
-            
-            // Kullanıcı oluşturulmuş olabilir, giriş yapmayı dene
-            try {
-                const { data: signInData } = await supabaseClient.auth.signInWithPassword({
-                    email: email,
-                    password: password
-                });
-                
-                if (signInData.user) {
-                    console.log('✅ Kullanıcı oluşturulmuş, manuel profil oluşturuluyor...');
-                    await createUserProfileFallback(signInData.user.id, email, fullName);
-                    return { user: signInData.user, session: signInData.session };
-                }
-            } catch (loginError) {
-                console.log('Kullanıcı henüz aktif değil:', loginError.message);
-            }
-        }
-        
         throw error;
     }
     
-    // Başarılı kayıt sonrası fallback profil oluştur
-    if (data.user) {
-        console.log('✅ Kayıt başarılı, profil kontrolü yapılıyor...');
-        try {
-            await createUserProfileFallback(data.user.id, email, fullName);
-        } catch (profileError) {
-            console.warn('⚠️ Fallback profil hatası (kritik değil):', profileError.message);
+    console.log('✅ Kayıt başarılı, oturum açılıyor...');
+    
+    // Email confirm gerekse bile hemen giriş yapmayı dene
+    try {
+        const { data: signInData, error: signInError } = await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+        
+        if (signInError) {
+            console.log('⚠️ Otomatik giriş başarısız (email confirm gerekli olabilir):', signInError.message);
+            // Email confirm gerekli, kullanıcıya söyleyelim
+            return { 
+                user: data.user, 
+                session: null, 
+                message: 'Kayıt başarılı! Lütfen e-postanızı doğrulayın.' 
+            };
         }
+        
+        if (signInData.user) {
+            console.log('✅ Giriş başarılı, profil oluşturuluyor...');
+            await createUserProfileFallback(signInData.user.id, email, fullName);
+            return { 
+                user: signInData.user, 
+                session: signInData.session,
+                message: 'Kayıt ve giriş başarılı!' 
+            };
+        }
+    } catch (loginError) {
+        console.warn('⚠️ Giriş hatası:', loginError.message);
     }
     
     return data;
