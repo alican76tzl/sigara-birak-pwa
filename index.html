@@ -687,73 +687,113 @@
 
     <!-- Auth Modal Script -->
     <script>
-        // Auth Modal Functions
-        function openAuthModal() {
-            document.getElementById('authModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeAuthModal() {
-            document.getElementById('authModal').style.display = 'none';
-            document.body.style.overflow = '';
-            // Clear hash
-            history.pushState('', document.title, window.location.pathname + window.location.search);
-        }
-        
-        function showLoginForm() {
-            document.getElementById('loginForm').style.display = 'block';
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('forgotForm').style.display = 'none';
-            openAuthModal();
-        }
-        
-        function showRegisterForm() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'block';
-            document.getElementById('forgotForm').style.display = 'none';
-            openAuthModal();
-        }
-        
-        function showForgotForm() {
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('forgotForm').style.display = 'block';
-            openAuthModal();
-        }
-        
-        // Close modal on overlay click
-        document.querySelector('.auth-modal-overlay').addEventListener('click', closeAuthModal);
-        
-        // Handle hash changes
-        window.addEventListener('hashchange', handleHash);
-        
-        function handleHash() {
-            const hash = window.location.hash.replace('#', '');
-            if (hash === 'login') {
-                showLoginForm();
-            } else if (hash === 'register') {
-                showRegisterForm();
-            } else if (hash === 'forgot') {
-                showForgotForm();
-            } else {
-                closeAuthModal();
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Auth modal script loaded');
+            
+            // Auth Modal Functions
+            window.openAuthModal = function() {
+                const modal = document.getElementById('authModal');
+                if (modal) {
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    console.log('Modal opened');
+                }
+            };
+            
+            window.closeAuthModal = function() {
+                const modal = document.getElementById('authModal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+                // Clear hash
+                history.pushState('', document.title, window.location.pathname + window.location.search);
+            };
+            
+            window.showLoginForm = function() {
+                const loginForm = document.getElementById('loginForm');
+                const registerForm = document.getElementById('registerForm');
+                const forgotForm = document.getElementById('forgotForm');
+                
+                if (loginForm) loginForm.style.display = 'block';
+                if (registerForm) registerForm.style.display = 'none';
+                if (forgotForm) forgotForm.style.display = 'none';
+                
+                openAuthModal();
+                console.log('Login form shown');
+            };
+            
+            window.showRegisterForm = function() {
+                const loginForm = document.getElementById('loginForm');
+                const registerForm = document.getElementById('registerForm');
+                const forgotForm = document.getElementById('forgotForm');
+                
+                if (loginForm) loginForm.style.display = 'none';
+                if (registerForm) registerForm.style.display = 'block';
+                if (forgotForm) forgotForm.style.display = 'none';
+                
+                openAuthModal();
+                console.log('Register form shown');
+            };
+            
+            window.showForgotForm = function() {
+                const loginForm = document.getElementById('loginForm');
+                const registerForm = document.getElementById('registerForm');
+                const forgotForm = document.getElementById('forgotForm');
+                
+                if (loginForm) loginForm.style.display = 'none';
+                if (registerForm) registerForm.style.display = 'none';
+                if (forgotForm) forgotForm.style.display = 'block';
+                
+                openAuthModal();
+                console.log('Forgot form shown');
+            };
+            
+            // Handle hash changes
+            function handleHash() {
+                const hash = window.location.hash.replace('#', '');
+                console.log('Hash changed:', hash);
+                
+                if (hash === 'login') {
+                    showLoginForm();
+                } else if (hash === 'register') {
+                    showRegisterForm();
+                } else if (hash === 'forgot') {
+                    showForgotForm();
+                } else {
+                    closeAuthModal();
+                }
             }
-        }
-        
-        // Check hash on page load
-        if (window.location.hash) {
-            handleHash();
-        }
-        
-        // Toast notification
-        function showToast(message, type = 'error') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.className = 'toast ' + type;
-            setTimeout(() => toast.classList.add('show'), 10);
-            setTimeout(() => toast.classList.remove('show'), 4000);
-        }
-        window.showToast = showToast;
+            
+            // Listen for hash changes
+            window.addEventListener('hashchange', handleHash);
+            
+            // Check hash on page load
+            if (window.location.hash) {
+                console.log('Initial hash:', window.location.hash);
+                handleHash();
+            }
+            
+            // Close modal on overlay click
+            const overlay = document.querySelector('.auth-modal-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', closeAuthModal);
+            }
+            
+            // Toast notification
+            window.showToast = function(message, type = 'error') {
+                const toast = document.getElementById('toast');
+                if (toast) {
+                    toast.textContent = message;
+                    toast.className = 'toast ' + type;
+                    setTimeout(() => toast.classList.add('show'), 10);
+                    setTimeout(() => toast.classList.remove('show'), 4000);
+                }
+            };
+            
+            console.log('Auth modal ready');
+        });
     </script>
 
     <!-- Supabase for Landing Page -->

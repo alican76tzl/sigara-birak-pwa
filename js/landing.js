@@ -112,8 +112,15 @@ function initPricingToggle() {
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            // Skip auth-related hashes - let them work normally for modal
+            if (href === '#login' || href === '#register' || href === '#forgot') {
+                return; // Don't prevent default, let hash change
+            }
+            
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 const headerOffset = 80;
                 const elementPosition = target.getBoundingClientRect().top;
