@@ -412,7 +412,7 @@
             </div>
 
             <!-- Login Form -->
-            <form id="loginForm" class="auth-form">
+            <form id="loginForm" class="auth-form" method="POST" action="javascript:void(0)" onsubmit="event.preventDefault(); handleLogin(event);">
                 <div class="form-group">
                     <input type="email" id="email" name="email" required placeholder=" ">
                     <label for="email">E-posta Adresiniz</label>
@@ -436,7 +436,7 @@
             </form>
 
             <!-- Register Form -->
-            <form id="registerForm" class="auth-form" style="display: none;">
+            <form id="registerForm" class="auth-form" method="POST" action="javascript:void(0)" onsubmit="event.preventDefault(); handleRegister(event);" style="display: none;">
                 <div class="form-group">
                     <input type="text" id="regName" name="fullName" required placeholder=" ">
                     <label for="regName">Ad Soyad</label>
@@ -466,7 +466,7 @@
             </form>
 
             <!-- Forgot Password Form -->
-            <form id="forgotForm" class="auth-form" style="display: none;">
+            <form id="forgotForm" class="auth-form" method="POST" action="javascript:void(0)" onsubmit="event.preventDefault(); handleForgot(event);" style="display: none;">
                 <p class="forgot-info">Şifrenizi sıfırlamak için e-posta adresinizi girin.</p>
                 <div class="form-group">
                     <input type="email" id="forgotEmail" name="email" required placeholder=" ">
