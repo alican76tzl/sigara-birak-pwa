@@ -2,318 +2,406 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="description" content="Sigara bırakma destek platformu - Profesyonel rehberlik ve topluluk desteği">
-    <title>Sigara Bırak | Yeni Bir Başlangıç</title>
-    
+    <title>Sigara Bırak | Sağlıklı Bir Yaşama Adım Atın</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
-    <link rel="icon" type="image/png" href="icons/icon-72x72.png">
     <link rel="stylesheet" href="css/style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="page-wrapper">
-        <!-- Animated Background -->
-        <div class="bg-animation">
-            <div class="bg-gradient"></div>
-            <div class="particles-container" id="particles"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
+<body class="landing-page">
+    <!-- Navigation -->
+    <nav class="nav-landing">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">✓</div>
+                <span>Sigara Bırak</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Özellikler</a>
+                <a href="#pricing">Fiyatlandırma</a>
+                <a href="#testimonials">Yorumlar</a>
+                <a href="index.html#login" class="nav-btn-secondary">Giriş Yap</a>
+                <a href="index.html#register" class="nav-btn-primary">Üye Ol</a>
+            </div>
+            <button class="nav-mobile-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-shapes">
+                <div class="hero-shape shape-a"></div>
+                <div class="hero-shape shape-b"></div>
+                <div class="hero-shape shape-c"></div>
             </div>
         </div>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Login Card -->
-            <div class="login-card" id="loginCard">
-                <div class="card-glow"></div>
-                
-                <!-- Logo Section -->
-                <div class="logo-section">
-                    <div class="logo-container">
-                        <div class="logo-ring ring-1"></div>
-                        <div class="logo-ring ring-2"></div>
-                        <div class="logo-ring ring-3"></div>
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-                                <path d="M8 12l3 3 5-6"/>
-                                <path d="M12 6v2M12 16v2M6 12h2M16 12h2"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <h1 class="app-title">
-                        <span class="title-word title-word-1">Sigara</span>
-                        <span class="title-word title-word-2">Bırak</span>
-                    </h1>
-                    <p class="tagline">Yeni Bir Başlangıç, Sağlıklı Bir Yaşam</p>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">🎉</span>
+                <span>50.000+ kişi sigarayı bıraktı!</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Bugün Sigarayı Bırak,</span>
+                <span class="title-line highlight">Yarın Sağlığını Kazan!</span>
+            </h1>
+            <p class="hero-subtitle">
+                Bilimsel yöntemler, uzman desteği ve topluluk gücüyle 
+                sigarayı bırakma yolculuğunuzda yanınızdayız.
+            </p>
+            <div class="hero-cta">
+                <a href="index.html#register" class="hero-btn-primary">
+                    <span>Ücretsiz Başla</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#features" class="hero-btn-secondary">
+                    <span>Nasıl Çalışır?</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="94">0</div>
+                    <div class="stat-suffix">%</div>
+                    <div class="stat-label">Başarı Oranı</div>
                 </div>
-
-                <!-- Register Form -->
-                <form class="login-form register-form" id="registerForm" style="display: none;">
-                    <div class="input-group">
-                        <div class="input-wrapper">
-                            <input type="text" id="regName" required placeholder=" " autocomplete="name">
-                            <label for="regName">Ad Soyad</label>
-                            <div class="input-focus-line"></div>
-                            <div class="input-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="12" cy="7" r="4"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-wrapper">
-                            <input type="email" id="regEmail" required placeholder=" " autocomplete="email">
-                            <label for="regEmail">E-posta Adresiniz</label>
-                            <div class="input-focus-line"></div>
-                            <div class="input-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-wrapper">
-                            <input type="password" id="regPassword" required placeholder=" " autocomplete="new-password">
-                            <label for="regPassword">Şifreniz</label>
-                            <div class="input-focus-line"></div>
-                            <div class="input-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-wrapper">
-                            <input type="password" id="regPasswordConfirm" required placeholder=" " autocomplete="new-password">
-                            <label for="regPasswordConfirm">Şifre Tekrar</label>
-                            <div class="input-focus-line"></div>
-                            <div class="input-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-options">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" id="agreeTerms" required>
-                            <span class="checkmark"></span>
-                            <span class="checkbox-text"><a href="#">Kullanım koşullarını</a> kabul ediyorum</span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="login-btn" id="registerBtn">
-                        <span class="btn-text">Üye Ol</span>
-                        <div class="btn-loader">
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                        </div>
-                        <div class="btn-ripple"></div>
-                    </button>
-
-                    <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem;">
-                        Zaten hesabınız var mı? <a href="#" class="back-to-login">Giriş Yap</a>
-                    </p>
-                </form>
-
-                <!-- Forgot Password Form -->
-                <form class="login-form forgot-form" id="forgotForm" style="display: none;">
-                    <p style="text-align: center; color: #64748b; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                        Şifrenizi sıfırlamak için e-posta adresinizi girin. Size bir sıfırlama bağlantısı göndereceğiz.
-                    </p>
-
-                    <div class="input-group">
-                        <div class="input-wrapper">
-                            <input type="email" id="forgotEmail" required placeholder=" " autocomplete="email">
-                            <label for="forgotEmail">E-posta Adresiniz</label>
-                            <div class="input-focus-line"></div>
-                            <div class="input-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="login-btn" id="forgotBtn">
-                        <span class="btn-text">Sıfırlama Bağlantısı Gönder</span>
-                        <div class="btn-loader">
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                        </div>
-                        <div class="btn-ripple"></div>
-                    </button>
-
-                    <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem;">
-                        <a href="#" class="back-to-login">← Giriş sayfasına dön</a>
-                    </p>
-                </form>
-
-                <!-- Login Form -->
-                <form class="login-form" id="loginForm">
-                    <div class="input-group">
-                        <div class="input-wrapper">
-                            <input type="email" id="email" required placeholder=" " autocomplete="email">
-                            <label for="email">E-posta Adresiniz</label>
-                            <div class="input-focus-line"></div>
-                            <div class="input-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-wrapper">
-                            <input type="password" id="password" required placeholder=" " autocomplete="current-password">
-                            <label for="password">Şifreniz</label>
-                            <div class="input-focus-line"></div>
-                            <div class="input-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                                </svg>
-                            </div>
-                            <button type="button" class="toggle-password" id="togglePassword">
-                                <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                    <circle cx="12" cy="12" r="3"/>
-                                </svg>
-                                <svg class="eye-off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
-                                    <line x1="1" y1="1" x2="23" y2="23"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="form-options">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" id="rememberMe">
-                            <span class="checkmark"></span>
-                            <span class="checkbox-text">Beni hatırla</span>
-                        </label>
-                        <a href="#" class="forgot-password">Şifremi unuttum</a>
-                    </div>
-
-                    <button type="submit" class="login-btn" id="loginBtn">
-                        <span class="btn-text">Giriş Yap</span>
-                        <div class="btn-loader">
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                        </div>
-                        <div class="btn-ripple"></div>
-                    </button>
-                </form>
-
-                <!-- Divider -->
-                <div class="divider">
-                    <span>veya</span>
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-suffix">K+</div>
+                    <div class="stat-label">Mutlu Üye</div>
                 </div>
-
-                <!-- Social Login -->
-                <div class="social-login">
-                    <button type="button" class="social-btn google">
-                        <svg viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                        <span>Google ile devam et</span>
-                    </button>
-                    <button type="button" class="social-btn apple">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.98 1.07-3.11-1.05.05-2.31.74-3.05 1.61-.67.78-1.27 2.03-1.11 3.11 1.17.09 2.36-.6 3.09-1.61"/>
-                        </svg>
-                        <span>Apple ile devam et</span>
-                    </button>
-                </div>
-
-                <!-- Sign Up Link -->
-                <div class="signup-section">
-                    <p>Hesabınız yok mu? <a href="#" class="signup-link">Hemen Üye Ol</a></p>
+                <div class="hero-stat">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-suffix">K+</div>
+                    <div class="stat-label">Tasarruf (₺)</div>
                 </div>
             </div>
-
-            <!-- Health Stats Preview -->
-            <div class="stats-preview">
-                <div class="stat-card stat-card-1">
-                    <div class="stat-icon">🫁</div>
-                    <div class="stat-value">20%</div>
-                    <div class="stat-label">Akciğer İyileşmesi</div>
-                </div>
-                <div class="stat-card stat-card-2">
-                    <div class="stat-icon">❤️</div>
-                    <div class="stat-value">50%</div>
-                    <div class="stat-label">Kalp Risk Azalması</div>
-                </div>
-                <div class="stat-card stat-card-3">
-                    <div class="stat-icon">💰</div>
-                    <div class="stat-value">₺12K</div>
-                    <div class="stat-label">Yıllık Tasarruf</div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Toast Notification -->
-        <div class="toast" id="toast">
-            <div class="toast-icon"></div>
-            <div class="toast-message"></div>
         </div>
-    </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-mouse"></div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Neden Biz?</span>
+                <h2 class="section-title">Sigara Bırakma Yolculuğunuzda Yanınızdayız</h2>
+                <p class="section-subtitle">Profesyonel araçlar ve destekle sigarayı bırakmak hiç bu kadar kolay olmamıştı.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon gradient-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>İlerleme Takibi</h3>
+                    <p>Vücudunuzdaki iyileşmeyi gerçek zamanlı takip edin. Sağlık kazanımlarınızı görün.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Topluluk Desteği</h3>
+                    <p>Aynı yolda olan binlerce kişiyle deneyim paylaşımı ve motivasyon.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-3">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Zamanlayıcı & Hatırlatıcı</h3>
+                    <p>Son sigaranızdan itibaren süreyi takip edin ve kilometre taşlarını kutlayın.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-4">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Tasarruf Hesaplayıcı</h3>
+                    <p>Sigaraya harcadığınız parayı görün ve neler yapabileceğinizi keşfedin.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-5">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Uzman Danışmanlık</h3>
+                    <p>7/24 destek hattı ve profesyonel sigara bırakma uzmanlarına erişim.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon gradient-6">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Başarı Ödülleri</h3>
+                    <p>Kilometre taşlarını tamamlayın, rozetler kazanın ve başarınızı kutlayın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Timeline Section -->
+    <section class="health-timeline">
+        <div class="section-container">
+            <div class="section-header light">
+                <span class="section-tag">Vücudunuz Değişiyor</span>
+                <h2 class="section-title">Sigarayı Bıraktıktan Sonra Neler Oluyor?</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">20 dk</div>
+                    <div class="timeline-content">
+                        <h4>Kalp Atışı Normale Dönüyor</h4>
+                        <p>Kalp atış hızınız ve kan basıncınız sigara içmeye başladığınız seviyeye iniyor.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">12 saat</div>
+                    <div class="timeline-content">
+                        <h4>Kan Oksijenleniyor</h4>
+                        <p>Karbonmonoksit seviyeleri normale dönüyor ve oksijen taşıma kapasitesi artıyor.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2-12 hafta</div>
+                    <div class="timeline-content">
+                        <h4>Dolaşım İyileşiyor</h4>
+                        <p>Kan dolaşımı ve akciğer fonksiyonları önemli ölçüde iyileşiyor.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1-9 ay</div>
+                    <div class="timeline-content">
+                        <h4>Öksürük Azalıyor</h4>
+                        <p>Öksürük ve nefes daralması azalıyor. Akciğerlerde temizleyici işlemler aktif.</p>
+                    </div>
+                </div>
+                <div class="timeline-item highlight">
+                    <div class="timeline-time">1 yıl</div>
+                    <div class="timeline-content">
+                        <h4>Kalp Hastalığı Riski Yarı Yarıya</h4>
+                        <p>Koroner kalp hastalığı riski sigara içen birine göre %50 azalıyor!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Abonelikler</span>
+                <h2 class="section-title">Size Uygun Planı Seçin</h2>
+                <p class="section-subtitle">İlk 7 gün ücretsiz. Dilediğiniz zaman iptal edin.</p>
+            </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label active" data-plan="monthly">Aylık</span>
+                <div class="toggle-switch">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-label" data-plan="yearly">Yıllık</span>
+                <span class="save-badge">%20 İndirim</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₺</span>
+                            <span class="amount" data-monthly="0" data-yearly="0">0</span>
+                            <span class="period">/ay</span>
+                        </div>
+                        <p class="pricing-desc">Başlangıç için ideal</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>İlerleme takibi</li>
+                        <li><span class="check">✓</span>Temel topluluk erişimi</li>
+                        <li><span class="check">✓</span>Tasarruf hesaplayıcı</li>
+                        <li class="disabled"><span>×</span>Uzman danışmanlık</li>
+                        <li class="disabled"><span>×</span>Reklamsız deneyim</li>
+                    </ul>
+                    <a href="index.html#register" class="pricing-btn outline">Ücretsiz Başla</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">En Popüler</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₺</span>
+                            <span class="amount" data-monthly="99" data-yearly="79">99</span>
+                            <span class="period">/ay</span>
+                        </div>
+                        <p class="pricing-desc">Tam destek paketi</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>Tüm Starter özellikleri</li>
+                        <li><span class="check">✓</span>7/24 uzman desteği</li>
+                        <li><span class="check">✓</span>Reklamsız deneyim</li>
+                        <li><span class="check">✓</span>Gelişmiş raporlar</li>
+                        <li><span class="check">✓</span>Aile paylaşımı</li>
+                    </ul>
+                    <a href="index.html#register" class="pricing-btn primary">Premium Ol</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="pricing-price">
+                            <span class="currency">₺</span>
+                            <span class="amount" data-monthly="149" data-yearly="119">149</span>
+                            <span class="period">/ay</span>
+                        </div>
+                        <p class="pricing-desc">Maksimum destek</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span>Tüm Premium özellikleri</li>
+                        <li><span class="check">✓</span>Kişisel koç atanması</li>
+                        <li><span class="check">✓</span>Özel sağlık raporu</li>
+                        <li><span class="check">✓</span>Öncelikli destek</li>
+                        <li><span class="check">✓</span>API erişimi</li>
+                    </ul>
+                    <a href="index.html#register" class="pricing-btn outline">Pro Ol</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Başarı Hikayeleri</span>
+                <h2 class="section-title">Onlar Başardı, Siz de Başarabilirsiniz!</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"15 yıllık sigara bağımlılığımdan kurtuldum. Bu uygulama sayesinde her gün motivasyonumu korudum ve 1 yıldır temizim!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AY</div>
+                        <div class="author-info">
+                            <div class="author-name">Ahmet Y.</div>
+                            <div class="author-badge">365 Gün Sigarasız</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Tasarruf hesaplayıcı beni çok etkiledi. Yılda 15.000₺ para biriktirdiğimi görünce bırakmam gerektiğini anladım."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <div class="author-name">Selin K.</div>
+                            <div class="author-badge">180 Gün Sigarasız</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Topluluk desteği muhteşem! Zor anlarımda her zaman yanımda hissettim. Artık daha sağlıklı ve mutluyum."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ME</div>
+                        <div class="author-info">
+                            <div class="author-name">Mehmet E.</div>
+                            <div class="author-badge">90 Gün Sigarasız</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Hemen Bugün Başlayın!</h2>
+                <p>İlk 7 gün ücretsiz. Kredi kartı gerekmez. Şimdi adım atın, sağlıklı yarınlar sizi bekliyor!</p>
+                <a href="index.html#register" class="cta-btn">
+                    <span>Ücretsiz Deneyin</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="home.html" class="footer-logo">
+                        <div class="footer-logo-icon">✓</div>
+                        <span>Sigara Bırak</span>
+                    </a>
+                    <p>Sağlıklı bir yaşam için ilk adımı birlikte atıyoruz. 50.000+ kişiye sigarayı bırakma yolculuklarında eşlik ettik.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">t</a>
+                        <a href="#" aria-label="Instagram">i</a>
+                        <a href="#" aria-label="YouTube">y</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Ürün</h4>
+                        <ul>
+                            <li><a href="#features">Özellikler</a></li>
+                            <li><a href="#pricing">Fiyatlandırma</a></li>
+                            <li><a href="#">İndir</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Şirket</h4>
+                        <ul>
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Kariyer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Destek</h4>
+                        <ul>
+                            <li><a href="#">Yardım Merkezi</a></li>
+                            <li><a href="#">İletişim</a></li>
+                            <li><a href="#">Gizlilik</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sigara Bırak. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase for Landing Page -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        // Initialize Supabase and check auth state
-        document.addEventListener('DOMContentLoaded', async () => {
-            // Initialize Supabase
-            window.SupabaseConfig.init();
-            
-            // Check if user is already logged in
-            const user = await window.SupabaseConfig.checkAuth();
-            if (user) {
-                console.log('✅ Kullanıcı zaten giriş yapmış:', user.email);
-                window.location.href = 'dashboard.html';
-            }
-            
-            // Register Service Worker
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('sw.js')
-                    .then(registration => console.log('SW registered'))
-                    .catch(error => console.log('SW registration failed'));
-            }
-        });
-    </script>
+    <script src="js/landing.js"></script>
 </body>
 </html>
