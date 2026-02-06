@@ -12,30 +12,66 @@ Modern, hızlı ve kullanıcı dostu bir PWA (Progressive Web App) uygulaması.
 - 🌙 **Karanlık Mod** - Otomatik tema desteği
 - ♿ **Erişilebilirlik** - WCAG standartlarına uygun
 - 📊 **Responsive Tasarım** - Tüm cihaz çözünürlükleri
+- 🔐 **Supabase Backend** - Güvenli kullanıcı yönetimi ve veri saklama
+- 📈 **İlerleme Takibi** - Gerçek zamanlı sağlık iyileşmesi takibi
+- 💰 **Tasarruf Hesaplayıcı** - Para ve zaman tasarrufu hesaplama
+- 👥 **Topluluk Desteği** - Kullanıcı forumu ve paylaşım özellikleri
 
 ## Dosya Yapısı
 
 ```
 DontS/
-├── index.html          # Ana sayfa
+├── index.html          # Ana landing sayfası
+├── login.html          # Giriş/Kayıt sayfası
+├── dashboard.html      # Kullanıcı dashboard'u
+├── progress.html       # İlerleme takibi
+├── savings.html        # Tasarruf hesaplayıcı
+├── community.html      # Topluluk forumu
+├── profile.html        # Kullanıcı profili
+├── settings.html       # Ayarlar
 ├── css/
-│   └── style.css       # Stil dosyaları
+│   ├── style.css       # Ana stiller
+│   ├── dashboard.css   # Dashboard stilleri
+│   └── landing.css     # Landing sayfası stilleri
 ├── js/
-│   └── main.js         # JavaScript
+│   ├── config.js       # Yapılandırma
+│   ├── supabase.js     # Supabase entegrasyonu
+│   ├── main.js         # Ana JavaScript
+│   ├── storage.js      # LocalStorage yönetimi
+│   ├── pwa.js          # PWA yönetimi
+│   └── ...             # Diğer modüller
 ├── manifest.json       # PWA manifest
 ├── sw.js              # Service Worker
-├── icons/             # Uygulama ikonları
-└── screenshots/         # Ekran görüntüleri
+├── icons/             # Uygulama ikonları (oluşturulacak)
+├── screenshots/       # PWA screenshot'ları (oluşturulacak)
+└── supabase_*.sql    # Veritabanı şemaları
 ```
-
-## Demo Giriş Bilgileri
-
-- **E-posta:** demo@sigarabrak.com
-- **Şifre:** demo123
 
 ## Kurulum
 
-### Geliştirme Sunucusu
+### 1. Gereksinimler
+
+- Modern web tarayıcı (Chrome 90+, Firefox 88+, Safari 14+)
+- Supabase hesabı (backend için)
+- Node.js (geliştirme için, opsiyonel)
+
+### 2. Supabase Kurulumu
+
+1. [Supabase](https://supabase.com) hesabı oluşturun
+2. Yeni proje oluşturun
+3. SQL Editor'de `supabase_complete.sql` dosyasını çalıştırın
+4. API anahtarlarınızı kopyalayın
+
+### 3. Environment Variables
+
+`.env` dosyası oluşturun:
+
+```bash
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_anon_key
+```
+
+### 4. Geliştirme Sunucusu
 
 ```bash
 # Python 3
@@ -48,11 +84,11 @@ npx serve .
 php -S localhost:8000
 ```
 
-### PWA Olarak Kurulum
+### 5. PWA Olarak Kurulum
 
 1. Siteyi açın: `http://localhost:8000`
 2. Tarayıcı menüsünden "Ana ekrana ekle" seçeneğini kullanın
-3. Uygulama telefonunuzun ana ekranına eklenecek
+3. Uygulama cihazınızın ana ekranına eklenecek
 
 ## Tarayıcı Desteği
 
@@ -61,14 +97,71 @@ php -S localhost:8000
 - Safari 14+
 - Samsung Internet 15+
 
-## Yapılacaklar
+## Deployment
 
-- [ ] Dashboard sayfası
-- [ ] İlerleme takibi
-- [ ] Bildirim sistemi
-- [ ] Toppluluk özellikleri
-- [ ] Abonelik yönetimi
+### Netlify
+
+```bash
+# netlify.toml zaten yapılandırılmış
+netlify deploy --prod
+```
+
+### Render
+
+```bash
+# render.yaml zaten yapılandırılmış
+# Render dashboard'dan deploy edin
+```
+
+## Geliştirme
+
+### İkonlar Oluşturma
+
+```bash
+# PWA ikonlarını oluşturmak için
+npm install -g pwa-asset-generator
+pwa-asset-generator logo.svg icons/ --icon-only
+```
+
+### Test
+
+```bash
+# Lighthouse ile PWA testi
+lighthouse http://localhost:8000 --view
+```
+
+## Güvenlik
+
+- ⚠️ **ÖNEMLİ:** `.env` dosyasını asla Git'e commit etmeyin
+- 🔒 Supabase RLS (Row Level Security) politikaları aktif
+- 🔐 Tüm API istekleri authenticated
+- 🛡️ XSS ve CSRF koruması
+
+## Katkıda Bulunma
+
+1. Fork yapın
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Commit yapın (`git commit -m 'Add amazing feature'`)
+4. Push yapın (`git push origin feature/amazing-feature`)
+5. Pull Request açın
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
 
 ---
 
-**Not:** Bu proje adım adım geliştirilmektedir. Şu an sadece login ekranı mevcuttur.
+**Not:** Bu proje aktif geliştirme aşamasındadır. Tüm özellikler henüz tamamlanmamıştır.
+
+## Yapılacaklar
+
+- [ ] PWA ikonlarını oluştur
+- [ ] Screenshot'ları ekle
+- [ ] Unit testler ekle
+- [ ] E2E testler ekle
+- [ ] TypeScript'e geçiş
+- [ ] Build pipeline (Vite/Webpack)
+- [ ] CI/CD pipeline
+- [ ] Error tracking (Sentry)
+- [ ] Analytics entegrasyonu
+

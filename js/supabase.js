@@ -9,12 +9,12 @@ function initSupabase() {
         // CONFIG objesinden güvenli değerleri al
         const config = window.CONFIG || {};
         const supabaseConfig = config.SUPABASE || {};
-        
+
         if (!supabaseConfig.URL || !supabaseConfig.ANON_KEY) {
             console.error('❌ Supabase yapılandırması eksik - config.js yüklenmemiş olabilir');
             return null;
         }
-        
+
         supabaseClient = supabase.createClient(supabaseConfig.URL, supabaseConfig.ANON_KEY, {
             auth: {
                 autoRefreshToken: true,
@@ -33,21 +33,21 @@ function initSupabase() {
 // Kullanıcı oturumunu kontrol et
 async function checkAuth() {
     if (!supabaseClient) initSupabase();
-    
+
     const { data: { user }, error } = await supabaseClient.auth.getUser();
-    
+
     if (error || !user) {
         console.log('Kullanıcı girişi yapılmamış');
         return null;
     }
-    
+
     return user;
 }
 
 // Auth state değişikliklerini dinle
 function onAuthStateChange(callback) {
     if (!supabaseClient) initSupabase();
-    
+
     supabaseClient.auth.onAuthStateChange((event, session) => {
         callback(event, session);
     });
@@ -59,9 +59,9 @@ function onAuthStateChange(callback) {
 
 async function signUp(email, password, fullName) {
     if (!supabaseClient) initSupabase();
-    
+
     console.log('🚀 Kayıt başlatılıyor...', { email, fullName });
-    
+
     // Kayıt dene
     const { data, error } = await supabaseClient.auth.signUp({
         email: email,
@@ -71,53 +71,53 @@ async function signUp(email, password, fullName) {
             emailRedirectTo: window.location.origin
         }
     });
-    
+
     if (error) {
         console.error('❌ Kayıt hatası:', error);
         throw error;
     }
-    
+
     console.log('✅ Kayıt başarılı, oturum açılıyor...');
-    
+
     // Email confirm gerekse bile hemen giriş yapmayı dene
     try {
         const { data: signInData, error: signInError } = await supabaseClient.auth.signInWithPassword({
             email: email,
             password: password
         });
-        
+
         if (signInError) {
             console.log('⚠️ Otomatik giriş başarısız (email confirm gerekli olabilir):', signInError.message);
             // Email confirm gerekli, kullanıcıya söyleyelim
-            return { 
-                user: data.user, 
-                session: null, 
-                message: 'Kayıt başarılı! Lütfen e-postanızı doğrulayın.' 
+            return {
+                user: data.user,
+                session: null,
+                message: 'Kayıt başarılı! Lütfen e-postanızı doğrulayın.'
             };
         }
-        
+
         if (signInData.user) {
             console.log('✅ Giriş başarılı, profil oluşturuluyor...');
             await createUserProfileFallback(signInData.user.id, email, fullName);
-            return { 
-                user: signInData.user, 
+            return {
+                user: signInData.user,
                 session: signInData.session,
-                message: 'Kayıt ve giriş başarılı!' 
+                message: 'Kayıt ve giriş başarılı!'
             };
         }
     } catch (loginError) {
         console.warn('⚠️ Giriş hatası:', loginError.message);
     }
-    
+
     return data;
 }
 
 // Manuel profil oluşturma (trigger çalışmazsa)
 async function createUserProfileFallback(userId, email, fullName) {
     if (!supabaseClient) initSupabase();
-    
+
     console.log('🔄 Fallback profil oluşturma başlıyor...', { userId, email, fullName });
-    
+
     try {
         // Önce profil var mı kontrol et
         const { data: existingProfile } = await supabaseClient
@@ -125,12 +125,12 @@ async function createUserProfileFallback(userId, email, fullName) {
             .select('id')
             .eq('id', userId)
             .single();
-        
+
         if (existingProfile) {
             console.log('✅ Profil zaten var, fallback atlanıyor');
             return;
         }
-        
+
         // Profil oluştur
         const { error: profileError } = await supabaseClient
             .from('profiles')
@@ -141,14 +141,14 @@ async function createUserProfileFallback(userId, email, fullName) {
                 created_at: new Date().toISOString(),
                 updated_at: new Date().toISOString()
             });
-        
+
         if (profileError) {
             console.error('❌ Profil oluşturma hatası:', profileError);
             throw profileError;
         }
-        
+
         console.log('✅ Profil oluşturuldu');
-        
+
     } catch (e) {
         console.error('❌ Fallback profil hatası:', e.message);
         // Hata fırlatma, sadece logla
@@ -157,30 +157,30 @@ async function createUserProfileFallback(userId, email, fullName) {
 
 async function signIn(email, password) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient.auth.signInWithPassword({
         email: email,
         password: password
     });
-    
+
     if (error) throw error;
     return data;
 }
 
 async function signOut() {
     if (!supabaseClient) initSupabase();
-    
+
     const { error } = await supabaseClient.auth.signOut();
     if (error) throw error;
 }
 
 async function resetPassword(email) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
         redirectTo: window.location.origin + '/reset-password.html'
     });
-    
+
     if (error) throw error;
     return data;
 }
@@ -191,27 +191,27 @@ async function resetPassword(email) {
 
 async function getProfile(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('profiles')
         .select('*')
         .eq('id', userId)
         .single();
-    
+
     if (error) throw error;
     return data;
 }
 
 async function updateProfile(userId, updates) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('profiles')
         .update(updates)
         .eq('id', userId)
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
@@ -222,20 +222,20 @@ async function updateProfile(userId, updates) {
 
 async function getQuitInfo(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('quit_smoking_info')
         .select('*')
         .eq('user_id', userId)
         .single();
-    
+
     if (error && error.code !== 'PGRST116') throw error; // PGRST116 = not found
     return data;
 }
 
 async function saveQuitInfo(userId, info) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('quit_smoking_info')
         .upsert({
@@ -245,7 +245,7 @@ async function saveQuitInfo(userId, info) {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
@@ -256,25 +256,25 @@ async function saveQuitInfo(userId, info) {
 
 async function getTodayCheckIn(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const today = new Date().toISOString().split('T')[0];
-    
+
     const { data, error } = await supabaseClient
         .from('daily_checkins')
         .select('*')
         .eq('user_id', userId)
         .eq('checkin_date', today)
         .single();
-    
+
     if (error && error.code !== 'PGRST116') throw error;
     return data;
 }
 
 async function saveCheckIn(userId, checkInData) {
     if (!supabaseClient) initSupabase();
-    
+
     const today = new Date().toISOString().split('T')[0];
-    
+
     const { data, error } = await supabaseClient
         .from('daily_checkins')
         .upsert({
@@ -285,24 +285,24 @@ async function saveCheckIn(userId, checkInData) {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
 
 async function getCheckInHistory(userId, days = 7) {
     if (!supabaseClient) initSupabase();
-    
+
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - days);
-    
+
     const { data, error } = await supabaseClient
         .from('daily_checkins')
         .select('*')
         .eq('user_id', userId)
         .gte('checkin_date', startDate.toISOString().split('T')[0])
         .order('checkin_date', { ascending: false });
-    
+
     if (error) throw error;
     return data || [];
 }
@@ -313,25 +313,25 @@ async function getCheckInHistory(userId, days = 7) {
 
 async function getTodayMood(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const today = new Date().toISOString().split('T')[0];
-    
+
     const { data, error } = await supabaseClient
         .from('mood_entries')
         .select('*')
         .eq('user_id', userId)
         .eq('entry_date', today)
         .single();
-    
+
     if (error && error.code !== 'PGRST116') throw error;
     return data;
 }
 
 async function saveMoodEntry(userId, moodData) {
     if (!supabaseClient) initSupabase();
-    
+
     const today = new Date().toISOString().split('T')[0];
-    
+
     const { data, error } = await supabaseClient
         .from('mood_entries')
         .upsert({
@@ -341,24 +341,24 @@ async function saveMoodEntry(userId, moodData) {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
 
 async function getMoodHistory(userId, days = 7) {
     if (!supabaseClient) initSupabase();
-    
+
     const startDate = new Date();
     startDate.setDate(startDate.getDate() - days);
-    
+
     const { data, error } = await supabaseClient
         .from('mood_entries')
         .select('*')
         .eq('user_id', userId)
         .gte('entry_date', startDate.toISOString().split('T')[0])
         .order('entry_date', { ascending: true });
-    
+
     if (error) throw error;
     return data || [];
 }
@@ -369,21 +369,21 @@ async function getMoodHistory(userId, days = 7) {
 
 async function getJournalEntries(userId, limit = 10) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('journal_entries')
         .select('*')
         .eq('user_id', userId)
         .order('entry_date', { ascending: false })
         .limit(limit);
-    
+
     if (error) throw error;
     return data || [];
 }
 
 async function saveJournalEntry(userId, entry) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('journal_entries')
         .upsert({
@@ -393,20 +393,20 @@ async function saveJournalEntry(userId, entry) {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
 
 async function deleteJournalEntry(userId, entryId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { error } = await supabaseClient
         .from('journal_entries')
         .delete()
         .eq('id', entryId)
         .eq('user_id', userId);
-    
+
     if (error) throw error;
 }
 
@@ -416,23 +416,23 @@ async function deleteJournalEntry(userId, entryId) {
 
 async function getAchievements(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('achievements')
         .select('*')
         .eq('user_id', userId)
         .order('earned_at', { ascending: false });
-    
+
     if (error) throw error;
     return data || [];
 }
 
 async function checkNewAchievements(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .rpc('check_and_add_achievements', { user_uuid: userId });
-    
+
     if (error) throw error;
     return data || [];
 }
@@ -443,21 +443,21 @@ async function checkNewAchievements(userId) {
 
 async function getActivities(userId, limit = 20) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('activities')
         .select('*')
         .eq('user_id', userId)
         .order('created_at', { ascending: false })
         .limit(limit);
-    
+
     if (error) throw error;
     return data || [];
 }
 
 async function addActivity(userId, activityType, message, icon = '✓') {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('activities')
         .insert({
@@ -468,7 +468,7 @@ async function addActivity(userId, activityType, message, icon = '✓') {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
@@ -479,7 +479,7 @@ async function addActivity(userId, activityType, message, icon = '✓') {
 
 async function getCommunityPosts(limit = 20, offset = 0) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('community_posts')
         .select(`
@@ -489,26 +489,26 @@ async function getCommunityPosts(limit = 20, offset = 0) {
         .order('is_pinned', { ascending: false })
         .order('created_at', { ascending: false })
         .range(offset, offset + limit - 1);
-    
+
     if (error) throw error;
     return data || [];
 }
 
 async function createPost(userId, content, postType = 'general', isAnonymous = false) {
     if (!supabaseClient) initSupabase();
-    
+
     // Kullanıcının sigarasız gün sayısını al
     const { data: quitInfo } = await supabaseClient
         .from('quit_smoking_info')
         .select('quit_date')
         .eq('user_id', userId)
         .single();
-    
+
     let daysSmokeFree = 0;
     if (quitInfo) {
         daysSmokeFree = Math.floor((new Date() - new Date(quitInfo.quit_date)) / (1000 * 60 * 60 * 24));
     }
-    
+
     const { data, error } = await supabaseClient
         .from('community_posts')
         .insert({
@@ -520,14 +520,14 @@ async function createPost(userId, content, postType = 'general', isAnonymous = f
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
 
 async function likePost(userId, postId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('post_likes')
         .upsert({
@@ -536,26 +536,26 @@ async function likePost(userId, postId) {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
 
 async function unlikePost(userId, postId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { error } = await supabaseClient
         .from('post_likes')
         .delete()
         .eq('post_id', postId)
         .eq('user_id', userId);
-    
+
     if (error) throw error;
 }
 
 async function addComment(userId, postId, content) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('post_comments')
         .insert({
@@ -565,7 +565,7 @@ async function addComment(userId, postId, content) {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
@@ -576,12 +576,12 @@ async function addComment(userId, postId, content) {
 
 async function getLeaderboard(limit = 50) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('community_leaderboard')
         .select('*')
         .limit(limit);
-    
+
     if (error) throw error;
     return data || [];
 }
@@ -592,20 +592,20 @@ async function getLeaderboard(limit = 50) {
 
 async function getUserSettings(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('user_settings')
         .select('*')
         .eq('user_id', userId)
         .single();
-    
+
     if (error && error.code !== 'PGRST116') throw error;
     return data;
 }
 
 async function updateUserSettings(userId, settings) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('user_settings')
         .upsert({
@@ -615,7 +615,7 @@ async function updateUserSettings(userId, settings) {
         })
         .select()
         .single();
-    
+
     if (error) throw error;
     return data;
 }
@@ -626,32 +626,32 @@ async function updateUserSettings(userId, settings) {
 
 async function getNotifications(userId, onlyUnread = false) {
     if (!supabaseClient) initSupabase();
-    
+
     let query = supabaseClient
         .from('notifications')
         .select('*')
         .eq('user_id', userId)
         .order('created_at', { ascending: false });
-    
+
     if (onlyUnread) {
         query = query.eq('is_read', false);
     }
-    
+
     const { data, error } = await query;
-    
+
     if (error) throw error;
     return data || [];
 }
 
 async function markNotificationAsRead(userId, notificationId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { error } = await supabaseClient
         .from('notifications')
         .update({ is_read: true })
         .eq('id', notificationId)
         .eq('user_id', userId);
-    
+
     if (error) throw error;
 }
 
@@ -661,13 +661,13 @@ async function markNotificationAsRead(userId, notificationId) {
 
 async function getUserProgressSummary(userId) {
     if (!supabaseClient) initSupabase();
-    
+
     const { data, error } = await supabaseClient
         .from('user_progress_summary')
         .select('*')
         .eq('user_id', userId)
         .single();
-    
+
     if (error) throw error;
     return data;
 }
@@ -677,9 +677,9 @@ async function getUserProgressSummary(userId) {
 // ============================================
 
 window.SupabaseConfig = {
-    url: SUPABASE_URL,
-    anonKey: SUPABASE_ANON_KEY,
-    client: supabaseClient,
+    get url() { return window.CONFIG?.SUPABASE?.URL || ''; },
+    get anonKey() { return window.CONFIG?.SUPABASE?.ANON_KEY || ''; },
+    get client() { return supabaseClient; },
     init: initSupabase,
     checkAuth,
     onAuthStateChange,

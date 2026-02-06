@@ -1,8 +1,8 @@
-const CACHE_NAME = 'sigara-birak-v2';
+const CACHE_NAME = 'sigara-birak-v3';
 const STATIC_ASSETS = [
     '/',
     '/index.html',
-    '/home.html',
+    '/login.html',
     '/dashboard.html',
     '/progress.html',
     '/savings.html',
@@ -19,6 +19,7 @@ const STATIC_ASSETS = [
     '/js/supabase.js',
     '/js/main.js',
     '/js/landing.js',
+    '/js/pwa.js',
     '/manifest.json',
     'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2',
     'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'
@@ -57,10 +58,10 @@ self.addEventListener('activate', (event) => {
 // Fetch event - serve from cache or network
 self.addEventListener('fetch', (event) => {
     const { request } = event;
-    
+
     // Skip non-GET requests
     if (request.method !== 'GET') return;
-    
+
     // Skip cross-origin requests (except Google Fonts)
     const url = new URL(request.url);
     if (url.origin !== self.location.origin && !url.hostname.includes('google')) {
@@ -110,7 +111,7 @@ self.addEventListener('push', (event) => {
 // Handle notification clicks
 self.addEventListener('notificationclick', (event) => {
     event.notification.close();
-    
+
     if (event.action === 'open') {
         event.waitUntil(
             clients.openWindow('/')

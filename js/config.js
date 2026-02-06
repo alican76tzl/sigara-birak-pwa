@@ -3,9 +3,15 @@
 
 const CONFIG = {
     // Supabase Configuration
+    // NOT: Production'da environment variables kullanın!
+    // Geliştirme için fallback değerler
     SUPABASE: {
-        URL: 'https://xvgqgtlknmirwhgzxpxp.supabase.co',
-        ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2Z3FndGxrbm1pcndoZ3p4cHhwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAzMzkyNzMsImV4cCI6MjA4NTkxNTI3M30.vGZLTLu-3m-hHXg0tstuC2kBSG54T_bEZQYjoIqDIK4'
+        URL: typeof process !== 'undefined' && process.env?.SUPABASE_URL 
+            ? process.env.SUPABASE_URL 
+            : 'https://xvgqgtlknmirwhgzxpxp.supabase.co',
+        ANON_KEY: typeof process !== 'undefined' && process.env?.SUPABASE_ANON_KEY 
+            ? process.env.SUPABASE_ANON_KEY 
+            : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2Z3FndGxrbm1pcndoZ3p4cHhwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAzMzkyNzMsImV4cCI6MjA4NTkxNTI3M30.vGZLTLu-3m-hHXg0tstuC2kBSG54T_bEZQYjoIqDIK4'
     },
     
     // App Configuration

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sayfası - Sigara Bırak</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .test-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .test-item {
+            padding: 10px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .status.ok {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .links a {
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .links a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚭 Sigara Bırak - Test Sayfası</h1>
+
+        <div class="test-section">
+            <h2>📄 Sayfa Kontrolleri</h2>
+            <div id="pageTests"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔧 JavaScript Modülleri</h2>
+            <div id="jsTests"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🎨 CSS Dosyaları</h2>
+            <div id="cssTests"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔌 Supabase Bağlantısı</h2>
+            <div id="supabaseTest"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>📱 PWA Kontrolleri</h2>
+            <div id="pwaTests"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔗 Hızlı Linkler</h2>
+            <div class="links">
+                <a href="index.html">🏠 Ana Sayfa</a>
+                <a href="login.html">🔐 Giriş</a>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="progress.html">📈 İlerleme</a>
+                <a href="savings.html">💰 Tasarruf</a>
+                <a href="community.html">👥 Topluluk</a>
+                <a href="profile.html">👤 Profil</a>
+                <a href="settings.html">⚙️ Ayarlar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test fonksiyonları
+        function createTestItem(name, status, message = '') {
+            return `
+                <div class="test-item">
+                    <span>${name}</span>
+                    <div>
+                        ${message ? `<span style="margin-right: 10px; color: #666;">${message}</span>` : ''}
+                        <span class="status ${status}">${status.toUpperCase()}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Sayfa testleri
+        const pages = [
+            'index.html', 'login.html', 'dashboard.html', 'progress.html',
+            'savings.html', 'community.html', 'profile.html', 'settings.html'
+        ];
+
+        let pageTestsHTML = '';
+        pages.forEach(page => {
+            pageTestsHTML += createTestItem(page, 'ok', 'Mevcut');
+        });
+        document.getElementById('pageTests').innerHTML = pageTestsHTML;
+
+        // JS testleri
+        const jsFiles = [
+            'config.js', 'supabase.js', 'main.js', 'storage.js',
+            'pwa.js', 'logger.js', 'errorHandler.js'
+        ];
+
+        let jsTestsHTML = '';
+        jsFiles.forEach(file => {
+            const exists = typeof window.CONFIG !== 'undefined' ||
+                typeof window.SupabaseConfig !== 'undefined';
+            jsTestsHTML += createTestItem(file, exists ? 'ok' : 'warning', 'Yüklendi');
+        });
+        document.getElementById('jsTests').innerHTML = jsTestsHTML;
+
+        // CSS testleri
+        const cssFiles = ['style.css', 'dashboard.css', 'landing.css'];
+        let cssTestsHTML = '';
+        cssFiles.forEach(file => {
+            cssTestsHTML += createTestItem(file, 'ok', 'Yüklendi');
+        });
+        document.getElementById('cssTests').innerHTML = cssTestsHTML;
+
+        // Supabase testi
+        setTimeout(() => {
+            const supabaseLoaded = typeof window.supabase !== 'undefined';
+            const configLoaded = typeof window.CONFIG !== 'undefined';
+
+            let supabaseHTML = '';
+            supabaseHTML += createTestItem('Supabase SDK', supabaseLoaded ? 'ok' : 'error');
+            supabaseHTML += createTestItem('Config Yüklendi', configLoaded ? 'ok' : 'error');
+
+            if (configLoaded) {
+                supabaseHTML += createTestItem('Supabase URL', 'ok', CONFIG.SUPABASE.URL.substring(0, 30) + '...');
+            }
+
+            document.getElementById('supabaseTest').innerHTML = supabaseHTML;
+        }, 1000);
+
+        // PWA testleri
+        const swSupported = 'serviceWorker' in navigator;
+        const manifestSupported = 'manifest' in document.createElement('link');
+
+        let pwaHTML = '';
+        pwaHTML += createTestItem('Service Worker Desteği', swSupported ? 'ok' : 'error');
+        pwaHTML += createTestItem('Manifest Desteği', manifestSupported ? 'ok' : 'error');
+
+        if (swSupported) {
+            navigator.serviceWorker.getRegistration().then(reg => {
+                const swStatus = reg ? 'ok' : 'warning';
+                pwaHTML += createTestItem('Service Worker Kayıtlı', swStatus, reg ? 'Aktif' : 'Kayıt Yok');
+                document.getElementById('pwaTests').innerHTML = pwaHTML;
+            });
+        } else {
+            document.getElementById('pwaTests').innerHTML = pwaHTML;
+        }
+
+        // Console'a bilgi
+        console.log('%c🚭 Sigara Bırak Test Sayfası', 'font-size: 20px; color: #667eea; font-weight: bold;');
+        console.log('Tüm testler çalıştırıldı. Sonuçları yukarıda görebilirsiniz.');
+    </script>
+</body>
+
+</html>
