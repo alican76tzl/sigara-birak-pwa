@@ -80,14 +80,14 @@
       "name": "Giriş Yap",
       "short_name": "Giriş",
       "description": "Hesabınıza giriş yapın",
-      "url": "/login",
+      "url": "/index.html#login",
       "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
     },
     {
       "name": "İlerlemenizi Görün",
       "short_name": "İlerleme",
       "description": "Sigara bırakma ilerlemenizi kontrol edin",
-      "url": "/progress",
+      "url": "/progress.html",
       "icons": [{ "src": "icons/icon-96x96.png", "sizes": "96x96" }]
     }
   ],

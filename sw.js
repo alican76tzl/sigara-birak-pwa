@@ -1,11 +1,27 @@
-const CACHE_NAME = 'sigara-birak-v1';
+const CACHE_NAME = 'sigara-birak-v2';
 const STATIC_ASSETS = [
     '/',
     '/index.html',
+    '/home.html',
+    '/dashboard.html',
+    '/progress.html',
+    '/savings.html',
+    '/community.html',
+    '/profile.html',
+    '/settings.html',
     '/css/style.css',
+    '/css/dashboard.css',
+    '/css/landing.css',
+    '/js/config.js',
+    '/js/errorHandler.js',
+    '/js/validation.js',
+    '/js/storage.js',
+    '/js/supabase.js',
     '/js/main.js',
+    '/js/landing.js',
     '/manifest.json',
-    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'
+    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2',
+    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'
 ];
 
 // Install event - cache static assets

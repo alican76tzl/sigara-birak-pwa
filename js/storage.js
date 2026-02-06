@@ -1,7 +1,11 @@
 // Data Storage - LocalStorage Veri Yönetimi
+// Güvenli yapılandırma ile
+
 class DataStorage {
     constructor() {
-        this.keys = {
+        // CONFIG objesinden storage keys al
+        const config = window.CONFIG || {};
+        this.keys = config.STORAGE_KEYS || {
             user: 'sb_user',
             progress: 'sb_progress',
             settings: 'sb_settings',

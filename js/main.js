@@ -431,6 +431,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = new LoginApp();
     app.checkStoredEmail();
     
+    // Add form validation
+    if (window.formValidator) {
+        // Add validation to login form
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) {
+            window.formValidator.addFormValidation(loginForm);
+            
+            // Handle successful validation
+            loginForm.addEventListener('formValid', (e) => {
+                app.handleLogin(e);
+            });
+        }
+        
+        // Add validation to register form
+        const registerForm = document.getElementById('registerForm');
+        if (registerForm) {
+            window.formValidator.addFormValidation(registerForm);
+            
+            // Handle successful validation
+            registerForm.addEventListener('formValid', (e) => {
+                app.handleRegister(e);
+            });
+        }
+        
+        // Add validation to forgot form
+        const forgotForm = document.getElementById('forgotForm');
+        if (forgotForm) {
+            window.formValidator.addFormValidation(forgotForm);
+            
+            // Handle successful validation
+            forgotForm.addEventListener('formValid', (e) => {
+                app.handleForgot(e);
+            });
+        }
+    }
+    
     // Check URL hash and show correct form
     const hash = window.location.hash.replace('#', '');
     if (hash === 'register') {

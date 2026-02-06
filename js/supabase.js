@@ -1,14 +1,21 @@
-// Supabase Configuration - Supabase Yapılandırması
-const SUPABASE_URL = 'https://xvgqgtlknmirwhgzxpxp.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2Z3FndGxrbm1pcndoZ3p4cHhwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAzMzkyNzMsImV4cCI6MjA4NTkxNTI3M30.vGZLTLu-3m-hHXg0tstuC2kBSG54T_bEZQYjoIqDIK4';
+// Supabase Configuration - Güvenli yapılandırma
+// config.js dosyasından değerleri al
 
-// Supabase Client
 let supabaseClient = null;
 
 // Supabase'ı başlat
 function initSupabase() {
     if (typeof supabase !== 'undefined') {
-        supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        // CONFIG objesinden güvenli değerleri al
+        const config = window.CONFIG || {};
+        const supabaseConfig = config.SUPABASE || {};
+        
+        if (!supabaseConfig.URL || !supabaseConfig.ANON_KEY) {
+            console.error('❌ Supabase yapılandırması eksik - config.js yüklenmemiş olabilir');
+            return null;
+        }
+        
+        supabaseClient = supabase.createClient(supabaseConfig.URL, supabaseConfig.ANON_KEY, {
             auth: {
                 autoRefreshToken: true,
                 persistSession: true,

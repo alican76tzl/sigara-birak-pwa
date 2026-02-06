@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/errorHandler.js"></script>
+    <script src="js/pwa.js"></script>
+    <script src="js/storage.js"></script>
 </head>
 <body class="dashboard-body">
     <div class="dashboard-wrapper">
@@ -543,9 +549,12 @@
             sidebarOverlay.classList.remove('active');
         });
 
+        // Initialize DataStorage
+        const storage = new DataStorage();
+        window.DataStorage = storage;
+
         // Timer functionality with real data
         function updateTimer() {
-            const storage = window.DataStorage;
             const progress = storage.calculateProgress();
             
             const timerEl = document.getElementById('timer');
@@ -559,7 +568,6 @@
 
         // Update stats from storage
         function updateStatsFromStorage() {
-            const storage = window.DataStorage;
             if (!storage) return;
             
             const progress = storage.calculateProgress();
@@ -577,7 +585,9 @@
             if (timeSavedEl) timeSavedEl.textContent = Math.floor(progress.days * 24 * 5 / 60) + ' saat';
         }
         
+        // Update stats every 5 seconds
         updateStatsFromStorage();
+        setInterval(updateStatsFromStorage, 5000);
     </script>
 </body>
 </html>
